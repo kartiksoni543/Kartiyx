@@ -1,0 +1,3243 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="">
+
+   <!-- Site Title -->
+   <title>Kartik Soni - Personal Portfolio</title>
+
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="apple-touch-icon" href="assets/img/favicon.png">
+   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="assets/css/animate.min.css">
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.min.css">
+   <link rel="stylesheet" href="assets/css/flaticon_gerold.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/backToTop.css">
+   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="assets/css/swiper.min.css">
+   <link rel="stylesheet" href="assets/css/odometer-theme-default.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+   <link rel="stylesheet" href="assets/css/light-mode.css">
+   <link rel="stylesheet" href="assets/css/responsive.css">
+   <style>
+      html {
+         scroll-behavior: smooth;
+      }
+
+      .reveal {
+         opacity: 0;
+         transform: translateY(40px);
+         transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .reveal.active {
+         opacity: 1;
+         transform: translateY(0);
+      }
+
+      .glow:hover {
+         box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+      }
+
+      .micro-scale {
+         transition: transform 0.22s ease, box-shadow 0.22s ease;
+      }
+
+      .micro-scale:hover {
+         transform: translateY(-2px) scale(1.05);
+      }
+
+      .testimonial-item .logo-box {
+         display: flex;
+         align-items: center;
+      }
+
+      .client-logo-badge {
+         min-width: 165px;
+         min-height: 56px;
+         padding: 10px 16px;
+         border-radius: 14px;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+         font-size: 14px;
+         font-weight: 700;
+         line-height: 1.1;
+         letter-spacing: 0.08em;
+         text-transform: uppercase;
+         color: #fff;
+         border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .client-logo-badge.cosmic {
+         background: linear-gradient(135deg, #131826, #242d47);
+      }
+
+      .client-logo-badge.hedge {
+         background: linear-gradient(135deg, #153523, #1f7a47);
+      }
+
+      .client-logo-badge.ncompany {
+         background: linear-gradient(135deg, #221538, #4b2c7c);
+      }
+
+      .client-logo-badge.northaxis {
+         background: linear-gradient(135deg, #1f2430, #4e596f);
+      }
+
+      .client-logo-badge.aideoa {
+         background: linear-gradient(135deg, #251a0f, #8a5a21);
+      }
+
+      .client-logo-badge.luxurytravel {
+         background: linear-gradient(135deg, #17364a, #2d7da7);
+      }
+
+      .testimonial-item {
+         border-radius: 24px;
+         border: 1px solid rgba(168, 85, 247, 0.12);
+         background: linear-gradient(180deg, rgba(20, 13, 36, 0.96) 0%, rgba(17, 10, 32, 0.9) 100%);
+         transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+         will-change: transform;
+      }
+
+      .testimonial-item:hover {
+         transform: translateY(-8px);
+         border-color: rgba(168, 85, 247, 0.24);
+         box-shadow: 0 12px 24px rgba(168, 85, 247, 0.14);
+      }
+
+      .testimonial-item .image-box img {
+         width: 72px;
+         height: 72px;
+         object-fit: cover;
+         border-radius: 50%;
+         border: 2px solid rgba(168, 85, 247, 0.55);
+         box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.06), 0 0 14px rgba(168, 85, 247, 0.14);
+      }
+
+      .testimonial-rating {
+         display: flex;
+         align-items: center;
+         gap: 6px;
+         margin-bottom: 16px;
+         color: #f5c15d;
+         font-size: 14px;
+         line-height: 1;
+         letter-spacing: 0.02em;
+         opacity: 0.96;
+      }
+
+      .testimonial-rating i {
+         filter: none;
+      }
+
+      .testimonial-item .logo-box,
+      .testimonial-item .client-logo-badge {
+         transition: box-shadow 0.24s ease, border-color 0.24s ease, transform 0.24s ease;
+      }
+
+      .testimonial-item .client-logo-badge {
+         border: 1px solid rgba(168, 85, 247, 0.18);
+         box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+      }
+
+      .testimonial-item:hover .client-logo-badge {
+         transform: translateY(-2px);
+         box-shadow: 0 10px 18px rgba(168, 85, 247, 0.12);
+      }
+
+      .testimonial-item .quote {
+         color: rgba(255, 255, 255, 0.82);
+         transition: color 0.24s ease;
+      }
+
+      .testimonial-item:hover .quote {
+         color: rgba(255, 255, 255, 0.94);
+      }
+
+      .testimonial-item .name {
+         transition: color 0.24s ease;
+      }
+
+      .testimonial-item:hover .name {
+         color: #ffffff;
+      }
+
+      .testimonial-section {
+         position: relative;
+         overflow: hidden;
+      }
+
+      .testimonial-section::before,
+      .testimonial-section::after {
+         content: "";
+         position: absolute;
+         border-radius: 50%;
+         pointer-events: none;
+         z-index: 0;
+         filter: blur(40px);
+         opacity: 0.24;
+      }
+
+      .testimonial-section::before {
+         top: 10%;
+         left: -8%;
+         width: 280px;
+         height: 280px;
+         background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, rgba(168, 85, 247, 0) 72%);
+      }
+
+      .testimonial-section::after {
+         right: -6%;
+         bottom: 8%;
+         width: 320px;
+         height: 320px;
+         background: radial-gradient(circle, rgba(123, 47, 247, 0.26) 0%, rgba(123, 47, 247, 0) 72%);
+      }
+
+      .testimonial-section .container {
+         position: relative;
+         z-index: 1;
+      }
+
+      .why-work-section {
+         position: relative;
+         padding: 110px 0 30px;
+         background:
+            radial-gradient(circle at top center, rgba(168, 85, 247, 0.1) 0%, rgba(168, 85, 247, 0) 38%),
+            linear-gradient(180deg, #0f0715 0%, #140c1c 100%);
+      }
+
+      .why-work-grid {
+         row-gap: 24px;
+      }
+
+      .why-work-card {
+         height: 100%;
+         padding: 32px 24px;
+         border-radius: 20px;
+         background: linear-gradient(180deg, rgba(21, 14, 36, 0.92) 0%, rgba(14, 10, 28, 0.96) 100%);
+         border: 1px solid rgba(168, 85, 247, 0.22);
+         box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+         transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+      }
+
+      .why-work-card:hover {
+         transform: translateY(-8px);
+         border-color: rgba(168, 85, 247, 0.42);
+         box-shadow: 0 14px 28px rgba(168, 85, 247, 0.14);
+      }
+
+      .portfolio-item {
+         transition: transform 0.24s ease, box-shadow 0.24s ease;
+      }
+
+      .portfolio-item:hover {
+         transform: translateY(-8px);
+         box-shadow: 0 18px 36px rgba(168, 85, 247, 0.14);
+      }
+
+      .why-work-icon {
+         width: 64px;
+         height: 64px;
+         margin-bottom: 22px;
+         border-radius: 18px;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         background: rgba(168, 85, 247, 0.08);
+         border: 1px solid rgba(168, 85, 247, 0.2);
+         color: #a855f7;
+         font-size: 26px;
+      }
+
+      .why-work-title {
+         margin-bottom: 14px;
+         font-size: 24px;
+         line-height: 1.3;
+         color: #fff;
+      }
+
+      .why-work-card p {
+         margin: 0;
+         color: rgba(255, 255, 255, 0.72);
+         line-height: 1.75;
+      }
+
+      .why-work-section .section-header {
+         max-width: 720px;
+         margin: 0 auto 50px;
+      }
+
+      .services-widget .service-item {
+         transition: transform 0.24s ease, background 0.24s ease, box-shadow 0.24s ease;
+      }
+
+      .services-widget .service-item:hover {
+         transform: translateX(8px);
+      }
+
+      .services-widget .service-item.current {
+         background: linear-gradient(90deg, rgba(123, 47, 247, 0.18), rgba(159, 92, 255, 0.08));
+         box-shadow: 0 14px 30px rgba(123, 47, 247, 0.12);
+      }
+
+      .service_details_content .service_info.fade {
+         opacity: 0;
+         transform: translateY(10px);
+         transition: all 0.3s ease;
+      }
+
+      .service_details_content .service_info.fade.show {
+         opacity: 1;
+         transform: translateY(0);
+      }
+
+      .services_list ul li button {
+         transition: transform 0.24s ease, color 0.24s ease, background 0.24s ease, box-shadow 0.24s ease;
+         border-radius: 14px;
+      }
+
+      .services_list ul li:hover button {
+         transform: translateX(8px);
+      }
+
+      .services_list ul li.active button {
+         background: linear-gradient(135deg, rgba(123, 47, 247, 0.95), rgba(159, 92, 255, 0.9));
+         color: #fff;
+         box-shadow: 0 10px 24px rgba(123, 47, 247, 0.18);
+      }
+
+      .services_list ul li.active button i {
+         color: #fff;
+      }
+
+      .contact-section .form_group {
+         position: relative;
+      }
+
+      .contact-section .form_group input,
+      .contact-section .form_group textarea,
+      .contact-section .form_group .nice-select {
+         transition: border-color 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+      }
+
+.contact-section .form_group input:focus,
+.contact-section .form_group textarea:focus,
+.contact-section .form_group .nice-select.open,
+.contact-section .form_group .nice-select:focus {
+   border-color: rgba(168, 85, 247, 0.8);
+   box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.14);
+}
+
+.contact-section .form_group input,
+.contact-section .form_group textarea {
+   background-color: #050709 !important;
+   color: #ffffff !important;
+   -webkit-text-fill-color: #ffffff !important;
+   caret-color: #ffffff;
+}
+
+.contact-section .form_group input:focus,
+.contact-section .form_group textarea:focus,
+.contact-section .form_group input:not(:placeholder-shown),
+.contact-section .form_group textarea:not(:placeholder-shown) {
+   background-color: #050709 !important;
+   color: #ffffff !important;
+   -webkit-text-fill-color: #ffffff !important;
+}
+
+.contact-section .form_group input:-webkit-autofill,
+.contact-section .form_group input:-webkit-autofill:hover,
+.contact-section .form_group input:-webkit-autofill:focus,
+.contact-section .form_group textarea:-webkit-autofill,
+.contact-section .form_group textarea:-webkit-autofill:hover,
+.contact-section .form_group textarea:-webkit-autofill:focus {
+   -webkit-text-fill-color: #ffffff !important;
+   -webkit-box-shadow: 0 0 0 1000px #050709 inset !important;
+   box-shadow: 0 0 0 1000px #050709 inset !important;
+   transition: background-color 9999s ease-in-out 0s;
+}
+
+      .contact-section .field-error {
+         display: block;
+         margin-top: 8px;
+         font-size: 13px;
+         line-height: 1.4;
+         color: #f8a5c2;
+      }
+
+      .contact-section .form_group.has-error input,
+      .contact-section .form_group.has-error textarea,
+      .contact-section .form_group.has-error .nice-select {
+         border-color: rgba(248, 165, 194, 0.8);
+         box-shadow: 0 0 0 3px rgba(248, 165, 194, 0.1);
+      }
+
+      .contact-section .form_actions {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 12px;
+      }
+
+      .contact-section .tj-submit-btn {
+         position: relative;
+         overflow: hidden;
+         border-radius: 40px;
+         transition: transform 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease;
+         box-shadow: 0 10px 24px rgba(123, 47, 247, 0.22);
+      }
+
+      .contact-section .tj-submit-btn:hover {
+         transform: translateY(-2px);
+         box-shadow: 0 14px 30px rgba(168, 85, 247, 0.28);
+      }
+
+      .contact-section .tj-submit-btn.is-loading {
+         pointer-events: none;
+         opacity: 0.85;
+      }
+
+      .contact-section .tj-submit-btn .btn-loader {
+         display: none;
+         width: 16px;
+         height: 16px;
+         margin-left: 10px;
+         border: 2px solid rgba(255, 255, 255, 0.35);
+         border-top-color: #fff;
+         border-radius: 50%;
+         animation: contactBtnSpin 0.8s linear infinite;
+      }
+
+      .contact-section .tj-submit-btn.is-loading .btn-loader {
+         display: inline-block;
+      }
+
+      .contact-section .form-trust-note {
+         margin: 0;
+         font-size: 14px;
+         color: rgba(255, 255, 255, 0.62);
+      }
+
+      .contact-section .form-success-message {
+         display: none;
+         width: 100%;
+         padding: 14px 18px;
+         border-radius: 16px;
+         background: rgba(25, 18, 42, 0.9);
+         border: 1px solid rgba(168, 85, 247, 0.28);
+         color: #d8c2ff;
+      }
+
+      .contact-section .form-success-message.is-visible {
+         display: block;
+      }
+
+      .contact-section .whatsapp-cta {
+         display: inline-flex;
+         align-items: center;
+         gap: 10px;
+         margin-top: 2px;
+         padding: 12px 20px;
+         border-radius: 999px;
+         background: linear-gradient(135deg, rgba(123, 47, 247, 0.96), rgba(168, 85, 247, 0.92));
+         color: #fff;
+         box-shadow: 0 10px 24px rgba(123, 47, 247, 0.24);
+         transition: transform 0.22s ease, box-shadow 0.22s ease;
+      }
+
+      .contact-section .whatsapp-cta:hover {
+         transform: translateY(-2px);
+         box-shadow: 0 14px 30px rgba(168, 85, 247, 0.28);
+         color: #fff;
+      }
+
+      @keyframes contactBtnSpin {
+         to {
+            transform: rotate(360deg);
+         }
+      }
+
+      .resume-section,
+      .skills-section,
+      .testimonial-section,
+      .blog-section,
+      .tj-footer-area {
+         content-visibility: auto;
+         contain-intrinsic-size: 1px 900px;
+      }
+
+      @media (max-width: 767px) {
+         .contact-section .form_actions {
+            align-items: stretch;
+         }
+
+         .contact-section .whatsapp-cta {
+            width: 100%;
+            justify-content: center;
+         }
+
+         .why-work-section {
+            padding: 70px 0 20px;
+         }
+
+         .why-work-card {
+            border-radius: 18px;
+            padding: 28px 22px;
+         }
+
+         .why-work-title {
+            font-size: 22px;
+         }
+
+         .testimonial-item {
+            border-radius: 20px;
+         }
+
+         .testimonial-item:hover {
+            transform: translateY(-4px);
+         }
+
+         .testimonial-item .image-box img {
+            width: 60px;
+            height: 60px;
+         }
+
+         .testimonial-rating {
+            margin-bottom: 12px;
+            font-size: 13px;
+            gap: 5px;
+         }
+      }
+
+      .hero-section .hero-video-wrap {
+         position: absolute;
+         inset: 0;
+         z-index: 0;
+         overflow: hidden;
+         background-image: url("assets/img/hero/hero-background.png");
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center center;
+         animation: heroBackgroundFloat 40s linear infinite alternate;
+      }
+
+      .hero-section .hero-video-wrap::after {
+         content: "";
+         position: absolute;
+         inset: 0;
+         background:
+            radial-gradient(circle at 78% 22%, rgba(179, 95, 255, 0.12), transparent 24%),
+            linear-gradient(90deg, rgba(5, 6, 18, 0.96) 0%, rgba(10, 8, 28, 0.84) 44%, rgba(8, 8, 20, 0.7) 100%);
+      }
+
+      .hero-section .intro_text {
+         position: absolute;
+         inset: 0;
+         z-index: 2;
+         pointer-events: none;
+      }
+
+      .hero-section .intro_text svg text {
+         stroke: rgba(170, 102, 255, 0.5);
+      }
+
+      .hero-section .container {
+         position: relative;
+         z-index: 3;
+      }
+
+      .hero-section .hero-content-box {
+         position: relative;
+         z-index: 3;
+         padding-bottom: 42px;
+      }
+
+      .hero-section .hero-title {
+         font-size: 58px;
+      }
+
+      .hero-section .hero-content-box::before {
+         content: "";
+         position: absolute;
+         top: -24px;
+         left: -28px;
+         width: min(580px, 100%);
+         height: calc(100% + 16px);
+         background: linear-gradient(90deg, rgba(6, 7, 18, 0.9) 0%, rgba(18, 12, 40, 0.52) 62%, rgba(18, 12, 40, 0.12) 100%);
+         border: 1px solid rgba(185, 125, 255, 0.16);
+         border-radius: 28px;
+         z-index: -1;
+         box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+      }
+
+      .hero-section .funfact-area,
+      .hero-section .funfact-item {
+         position: relative;
+         z-index: 3;
+      }
+
+      .hero-section .hero-image-box img {
+         box-shadow: 0 0 18px rgba(170, 88, 255, 0.18), 0 0 36px rgba(120, 45, 220, 0.12);
+         animation: heroImageFloat 8s ease-in-out infinite;
+         transition: transform 0.22s ease, box-shadow 0.22s ease;
+         position: relative;
+         z-index: 2;
+      }
+
+      .hero-section .hero-image-box {
+         position: relative;
+         isolation: isolate;
+      }
+
+      .hero-section .hero-image-box::before {
+         content: "";
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         width: min(420px, 88%);
+         aspect-ratio: 1;
+         transform: translate(-50%, -50%);
+         border-radius: 50%;
+         background: radial-gradient(circle, rgba(168, 85, 247, 0.42) 0%, rgba(168, 85, 247, 0.2) 38%, rgba(168, 85, 247, 0.08) 58%, rgba(168, 85, 247, 0) 75%);
+         filter: blur(18px);
+         z-index: 1;
+         pointer-events: none;
+      }
+
+      .hero-section .hero-image-box img:hover {
+         transform: rotate(4.29deg) scale(1.05);
+      }
+
+      .hero-section .tj-btn-secondary,
+      .tj-header-area .header-button .tj-btn-primary {
+         position: relative;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         overflow: hidden;
+         border: 1px solid rgba(159, 92, 255, 0.55);
+         border-radius: 40px;
+         background: linear-gradient(135deg, #7b2ff7 0%, #9f5cff 50%, #7b2ff7 100%);
+         background-size: 200% 200%;
+         color: #fff;
+         box-shadow: 0 8px 18px rgba(123, 47, 247, 0.2);
+         transition: transform 0.22s ease, box-shadow 0.22s ease, background-position 0.22s ease;
+         z-index: 1;
+      }
+
+      .hero-section .tj-btn-secondary::before,
+      .tj-header-area .header-button .tj-btn-primary::before {
+         content: "";
+         position: absolute;
+         inset: -6px;
+         border-radius: inherit;
+         background: radial-gradient(circle, rgba(159, 92, 255, 0.32) 0%, rgba(159, 92, 255, 0) 72%);
+         opacity: 0.2;
+         z-index: -1;
+         transition: opacity 0.22s ease, transform 0.22s ease;
+      }
+
+      .wow {
+         animation-duration: 0.7s !important;
+      }
+
+      .hero-section .tj-btn-secondary:hover,
+      .tj-header-area .header-button .tj-btn-primary:hover {
+         color: #fff;
+         transform: translateY(-2px) scale(1.05);
+         background-position: 100% 50%;
+         box-shadow: 0 12px 24px rgba(123, 47, 247, 0.28);
+      }
+
+      .hero-section .tj-btn-secondary:hover::before,
+      .tj-header-area .header-button .tj-btn-primary:hover::before {
+         opacity: 1;
+         transform: scale(1.04);
+      }
+
+      .hero-section .tj-btn-secondary i,
+      .tj-header-area .header-button .tj-btn-primary i {
+         position: relative;
+         z-index: 1;
+      }
+
+      .hero-section .hero-calendly-trigger {
+         transition: transform 0.2s ease, box-shadow 0.22s ease, background-position 0.22s ease;
+         will-change: transform;
+      }
+
+      .hero-section .hero-calendly-trigger:hover {
+         box-shadow: 0 12px 30px rgba(168, 85, 247, 0.26);
+      }
+
+      .hero-calendly-modal {
+         position: fixed;
+         inset: 0;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         padding: 24px;
+         background: rgba(6, 10, 23, 0.7);
+         backdrop-filter: blur(14px);
+         -webkit-backdrop-filter: blur(14px);
+         opacity: 0;
+         visibility: hidden;
+         pointer-events: none;
+         transition: opacity 0.28s ease, visibility 0.28s ease;
+         z-index: 9999;
+      }
+
+      .hero-calendly-modal.is-open {
+         opacity: 1;
+         visibility: visible;
+         pointer-events: auto;
+      }
+
+      .hero-calendly-modal__dialog {
+         position: relative;
+         width: min(100%, 960px);
+         background: #0f172a;
+         border: 1px solid rgba(168, 85, 247, 0.16);
+         border-radius: 24px;
+         box-shadow: 0 24px 60px rgba(2, 6, 23, 0.42);
+         overflow: hidden;
+         transform: scale(0.96) translateY(18px);
+         transition: transform 0.28s ease, opacity 0.28s ease;
+         opacity: 0;
+      }
+
+      .hero-calendly-modal.is-open .hero-calendly-modal__dialog {
+         transform: scale(1) translateY(0);
+         opacity: 1;
+      }
+
+      .hero-calendly-modal__close {
+         position: absolute;
+         top: 16px;
+         right: 16px;
+         width: 42px;
+         height: 42px;
+         border: 1px solid rgba(255, 255, 255, 0.08);
+         border-radius: 999px;
+         background: rgba(15, 23, 42, 0.88);
+         color: #ffffff;
+         font-size: 20px;
+         line-height: 1;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+         z-index: 2;
+      }
+
+      .hero-calendly-modal__close:hover {
+         background: rgba(30, 41, 59, 0.96);
+         border-color: rgba(168, 85, 247, 0.28);
+         transform: translateY(-1px);
+      }
+
+      .hero-calendly-modal__frame {
+         display: block;
+         width: 100%;
+         min-height: 720px;
+         border: 0;
+         background: #0f172a;
+      }
+
+      .hero-calendly-sr-only {
+         position: absolute;
+         width: 1px;
+         height: 1px;
+         padding: 0;
+         margin: -1px;
+         overflow: hidden;
+         clip: rect(0, 0, 0, 0);
+         white-space: nowrap;
+         border: 0;
+      }
+
+      @keyframes heroBackgroundFloat {
+         0% {
+            background-position: 50% 50%;
+         }
+
+         50% {
+            background-position: 52% 48%;
+         }
+
+         100% {
+            background-position: 55% 46%;
+         }
+      }
+
+      @keyframes heroImageFloat {
+         0% {
+            transform: rotate(4.29deg) translateY(0);
+         }
+
+         50% {
+            transform: rotate(4.29deg) translateY(-12px);
+         }
+
+         100% {
+            transform: rotate(4.29deg) translateY(0);
+         }
+      }
+
+      @media (max-width: 991px) {
+         .hero-section .hero-video-wrap {
+            background-size: 150% auto;
+            background-position: 62% center;
+         }
+
+         .hero-section .hero-content-box::before {
+            left: -16px;
+            top: -18px;
+            width: calc(100% + 16px);
+            height: calc(100% + 12px);
+            border-radius: 24px;
+         }
+
+         .hero-section .hero-image-box img {
+            box-shadow: 0 0 12px rgba(170, 88, 255, 0.14), 0 0 24px rgba(120, 45, 220, 0.1);
+            animation-duration: 8.5s;
+         }
+
+         .hero-section .hero-image-box::before {
+            width: min(320px, 82%);
+            filter: blur(14px);
+         }
+
+         .hero-section .hero-image-box img:hover {
+            transform: rotate(4.29deg) scale(1.03);
+         }
+
+         .hero-section .tj-btn-secondary,
+         .tj-header-area .header-button .tj-btn-primary {
+            box-shadow: 0 6px 14px rgba(123, 47, 247, 0.16);
+         }
+
+         .hero-calendly-modal {
+            padding: 18px;
+         }
+
+         .hero-calendly-modal__dialog {
+            width: 100%;
+            border-radius: 20px;
+         }
+
+         .hero-calendly-modal__frame {
+            min-height: 78vh;
+         }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+         .hero-section .hero-image-box img {
+            animation: none;
+            transition: none;
+         }
+
+         .hero-section .hero-image-box img:hover {
+            transform: rotate(4.29deg);
+         }
+
+         .hero-calendly-modal,
+         .hero-calendly-modal__dialog,
+         .hero-section .hero-calendly-trigger {
+            transition: none;
+         }
+      }
+.tj-btn-primary,
+.tj-btn-secondary,
+.submit_btn,
+.whatsapp-contact-btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.service-item,
+.portfolio-item,
+.testimonial-item,
+.why-work-card,
+.contact-form-box {
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.service-item:hover,
+.portfolio-item:hover,
+.testimonial-item:hover,
+.why-work-card:hover,
+.contact-form-box:hover {
+    transform: translateY(-8px);
+}
+
+.tj-btn-primary:hover,
+.tj-btn-secondary:hover,
+.submit_btn:hover,
+.whatsapp-contact-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.28);
+}
+
+@media (max-width: 767px) {
+    .service-item:hover,
+    .portfolio-item:hover,
+    .testimonial-item:hover,
+    .why-work-card:hover,
+    .contact-form-box:hover {
+        transform: translateY(-4px);
+    }
+
+    .tj-btn-primary:hover,
+    .tj-btn-secondary:hover,
+    .submit_btn:hover,
+    .whatsapp-contact-btn:hover {
+        transform: translateY(-2px) scale(1.03);
+    }
+}
+
+.service-detail-section {
+    margin-top: 34px;
+}
+
+.service-benefit-list,
+.service-process-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 14px;
+}
+
+.service-benefit-list li,
+.service-process-list li {
+    position: relative;
+    padding-left: 26px;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.75;
+}
+
+.service-benefit-list li::before,
+.service-process-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7b2ff7 0%, #a855f7 100%);
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.25);
+}
+
+.service-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.service-tech-stack span {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.service-detail-cta {
+    margin-top: 38px;
+    padding: 28px 30px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(24, 15, 38, 0.92) 0%, rgba(13, 9, 24, 0.98) 100%);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.service-detail-cta p {
+    margin: 0 0 18px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+@media (max-width: 767px) {
+    .service-detail-section {
+        margin-top: 28px;
+    }
+
+    .service-detail-cta {
+        margin-top: 30px;
+        padding: 22px 20px;
+    }
+
+    .service-detail-cta p {
+        font-size: 16px;
+    }
+}
+
+
+.popup_content_area,
+.popup_modal_content {
+    background: radial-gradient(circle at top left, #3b0a75, #0b0117 60%);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 40px rgba(128, 0, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+#service-wrapper .popup_modal_img {
+    position: relative;
+    overflow: hidden;
+}
+
+#service-wrapper.popup_content_area,
+#service-wrapper .popup_modal_content {
+    background: linear-gradient(180deg, #1a0033, #0a001a);
+}
+
+#service-wrapper .popup_modal_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    filter: brightness(0.85) contrast(1.05) saturate(0.9);
+}
+
+#service-wrapper .popup_modal_img::after {
+    display: none;
+}
+
+#service-wrapper .popup_modal_content .service_info .title,
+#service-wrapper .popup_modal_content .widget_title .title,
+#service-wrapper .popup_modal_content h1,
+#service-wrapper .popup_modal_content h2 {
+    background: none !important;
+    color: #f4f1fb !important;
+    -webkit-text-fill-color: #f4f1fb !important;
+    text-shadow: none !important;
+}
+
+#service-wrapper .popup_modal_content .service_info .desc p,
+#service-wrapper .popup_modal_content .service-benefit-list li,
+#service-wrapper .popup_modal_content .service-process-list li,
+#service-wrapper .popup_modal_content .service-detail-cta p,
+#service-wrapper .popup_modal_content .services_list button,
+#service-wrapper .popup_modal_content .contact_form input,
+#service-wrapper .popup_modal_content .contact_form textarea,
+#service-wrapper .popup_modal_content .contact_form input::placeholder,
+#service-wrapper .popup_modal_content .contact_form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.78) !important;
+}
+
+#service-wrapper,
+#service-wrapper * {
+    box-shadow: none !important;
+}
+
+.popup_modal_content .service_info .title,
+.popup_modal_content .widget_title .title,
+.popup_modal_content .subtitle {
+    color: #ffffff;
+}
+
+.popup_modal_content .service_info .title,
+.popup_modal_content .widget_title .title,
+.popup_modal_content h1,
+.popup_modal_content h2 {
+    background: linear-gradient(90deg, #a855f7 0%, #e879f9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 18px rgba(168, 85, 247, 0.14);
+}
+
+.popup_modal_content .service_info .desc p,
+.popup_modal_content .service-benefit-list li,
+.popup_modal_content .service-process-list li,
+.popup_modal_content .service-detail-cta p,
+.popup_modal_content .services_list button,
+.popup_modal_content .contact_form input,
+.popup_modal_content .contact_form textarea {
+    color: #cfcfcf;
+}
+
+.popup_modal_content .contact_form input::placeholder,
+.popup_modal_content .contact_form textarea::placeholder {
+    color: #cfcfcf;
+}
+
+.popup_modal_content .btn.tj-btn-primary,
+.popup_modal_content .btn.tj-btn-secondary {
+    transition: box-shadow 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+}
+
+.popup_modal_content .btn.tj-btn-primary:hover,
+.popup_modal_content .btn.tj-btn-secondary:hover {
+    box-shadow: 0 0 24px rgba(168, 85, 247, 0.28);
+    transform: translateY(-2px);
+}
+
+.popup_content_area::before,
+.popup_modal_content::before,
+.popup_modal_img::before,
+.popup_modal_content::after {
+    z-index: 0 !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+}
+
+.popup_content_area,
+.popup_modal_content {
+    position: relative;
+    z-index: 2;
+}
+
+.popup_modal_content .service_details,
+.popup_modal_content .service_details_content,
+.popup_modal_content .service_info,
+.popup_modal_content .tj_main_sidebar,
+.popup_modal_content .sidebar_widget,
+.popup_modal_content .modal-right,
+.popup_modal_content .modal-right * {
+    position: relative;
+    z-index: 3;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+}
+
+.popup_modal_content .service_info .desc p,
+.popup_modal_content .service-benefit-list li,
+.popup_modal_content .service-process-list li,
+.popup_modal_content .service-detail-cta p,
+.popup_modal_content .services_list button,
+.popup_modal_content .contact_form input,
+.popup_modal_content .contact_form textarea,
+.popup_modal_content .contact_form input::placeholder,
+.popup_modal_content .contact_form textarea::placeholder {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+.popup_modal_content [style*="opacity"] {
+    opacity: 1 !important;
+}
+
+.portfolio-popup-content,
+.portfolio-popup-content *,
+.portfolio_info,
+.portfolio_info *,
+.portfolio_info .desc,
+.portfolio_info .desc *,
+.portfolio_info p,
+.portfolio_info li,
+.portfolio_info span {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+}
+
+.portfolio-popup-content,
+.portfolio_info,
+.portfolio-popup-content .content,
+.portfolio-popup-content .content *,
+.portfolio-popup-content .portfolio_info,
+.portfolio-popup-content .portfolio_info * {
+    position: relative;
+    z-index: 3;
+}
+
+.portfolio-popup-content::before,
+.portfolio-popup-content::after,
+.portfolio_info::before,
+.portfolio_info::after {
+    z-index: 0 !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+}
+
+.portfolio_info h1,
+.portfolio_info h2,
+.portfolio_info h3,
+.portfolio_info h4,
+.portfolio_info .title,
+.portfolio_info .sub-title,
+.portfolio_info .project-title,
+.portfolio_info .portfolio-title,
+.portfolio_info .desc-title,
+.portfolio_info .approach-title,
+.portfolio_info .approach-content h3,
+.portfolio_info .project-description h3 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background: none !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+.portfolio_info p,
+.portfolio_info li,
+.portfolio_info .desc p,
+.portfolio_info .approach-content p,
+.portfolio_info .project-description p,
+.portfolio_info .project-description,
+.portfolio_info .approach-content,
+.portfolio_info .desc {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background: transparent !important;
+    opacity: 1 !important;
+}
+
+.popup_modal_content .portfolio_description .title,
+.popup_modal_content .portfolio_description .desc,
+.popup_modal_content .portfolio_description .desc p,
+.popup_modal_content .portfolio_approach .approach_title .title,
+.popup_modal_content .portfolio_approach .approach_content,
+.popup_modal_content .portfolio_approach .approach_content p,
+.popup_modal_content .portfolio_story .story_title .title,
+.popup_modal_content .portfolio_story .story_content,
+.popup_modal_content .portfolio_story .story_content p {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+    mix-blend-mode: normal !important;
+}
+
+.portfolio-section,
+.portfolio-section .portfolio-box,
+.portfolio-section .portfolio-wrapper,
+.portfolio-section .portfolio-item,
+.portfolio-section .row {
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+}
+
+	.portfolio-section .portfolio-item.reveal,
+	.portfolio-section .portfolio-box.reveal,
+	.portfolio-section .portfolio-wrapper.reveal {
+	    transform: none !important;
+	}
+
+	.skill-card {
+	    perspective: 1000px;
+	}
+
+	.skill-icon {
+	    transform-style: preserve-3d;
+	    transform: translate3d(0, 0, 0);
+	    transition: transform 0.28s ease, filter 0.28s ease;
+	    animation: skillIconFloat 4.8s ease-in-out infinite;
+	    will-change: transform, filter;
+	}
+
+	.skill-card:hover .skill-icon {
+	    filter: drop-shadow(0 10px 20px rgba(123, 47, 247, 0.14));
+	}
+
+	@keyframes skillIconFloat {
+	    0%,
+	    100% {
+	        transform: translate3d(0, 0, 0);
+	    }
+
+	    50% {
+	        transform: translate3d(0, -4px, 0);
+	    }
+	}
+	</style>
+   <style>
+      html,
+      body {
+         background-color: #0a0a0a;
+      }
+
+      body {
+         opacity: 0;
+         transition: opacity 0.4s ease;
+      }
+
+      body.loaded {
+         opacity: 1;
+      }
+
+      .reveal {
+         opacity: 0;
+         transform: translateY(40px);
+      }
+
+      .reveal.active {
+         opacity: 1;
+         transform: translateY(0);
+         transition: all 0.6s ease;
+      }
+   </style>
+</head>
+
+<body>
+   <!-- Preloader Area Start -->
+   <div class="preloader">
+      <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
+         <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+      </svg>
+
+      <div class="preloader-heading">
+         <div class="load-text">
+            <span>L</span>
+            <span>o</span>
+            <span>a</span>
+            <span>d</span>
+            <span>i</span>
+            <span>n</span>
+            <span>g</span>
+         </div>
+      </div>
+   </div>
+   <!-- Preloader Area End -->
+
+   <!-- start: Back To Top -->
+   <div class="progress-wrap" id="scrollUp">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+      </svg>
+   </div>
+   <!-- end: Back To Top -->
+
+   <!-- HEADER START -->
+   <header class="tj-header-area header-absolute">
+      <div class="container">
+         <div class="row">
+            <div class="col-12 d-flex flex-wrap align-items-center">
+               <div class="logo-box">
+                  <a href="#intro">
+                     <img src="assets/img/logo/logo.png" alt="">
+                  </a>
+               </div>
+
+               <div class="header-info-list d-none d-md-inline-block">
+                  <ul class="ul-reset">
+                     <li><a href="mailto:mail@gerolddesign.com">kartiksoni48226@gmail.com</a></li>
+                  </ul>
+               </div>
+               <div class="header-menu">
+                  <nav>
+                     <ul>
+                        <li><a href="#services-section">Services</a></li>
+                        <li><a href="#works-section">Works</a></li>
+                        <li><a href="#resume-section">Resume</a></li>
+                        <li><a href="#skills-section">Skills</a></li>
+                        <li><a href="#testimonials-section">Testimonials</a></li>
+                        <li><a href="#contact-section">Contact</a></li>
+                     </ul>
+                  </nav>
+               </div>
+               <div class="header-button">
+                  <a href="https://wa.me/919816748226?text=Hi%20I%20want%20a%20website%20for%20my%20business" target="_blank" class="btn tj-btn-primary">Hire me!</a>
+               </div>
+               <div class="menu-bar d-lg-none">
+                  <button>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <header class="tj-header-area header-2 header-sticky sticky-out">
+      <div class="container">
+         <div class="row">
+            <div class="col-12 d-flex flex-wrap align-items-center">
+               <div class="logo-box">
+                  <a href="#intro">
+                     <img src="assets/img/logo/logo.png" alt="">
+                  </a>
+               </div>
+
+               <div class="header-info-list d-none d-md-inline-block">
+                  <ul class="ul-reset">
+                     <li><a href="mailto:mail@gerolddesign.com">Kartiksoni48226@gmail.com.com</a></li>
+                  </ul>
+               </div>
+
+               <div class="header-menu">
+                  <nav>
+                     <ul>
+                        <li><a href="#services-section">Services</a></li>
+                        <li><a href="#works-section">Works</a></li>
+                        <li><a href="#resume-section">Resume</a></li>
+                        <li><a href="#skills-section">Skills</a></li>
+                        <li><a href="#testimonials-section">Testimonials</a></li>
+                        <li><a href="#contact-section">Contact</a></li>
+                     </ul>
+                  </nav>
+               </div>
+
+               <div class="header-button">
+                  <a href="https://wa.me/919816748226?text=Hi%20I%20want%20a%20website%20for%20my%20business" target="_blank" class="btn tj-btn-primary">Hire me!</a>
+               </div>
+
+               <div class="menu-bar d-lg-none">
+                  <button>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <!-- HEADER END -->
+
+   <main class="site-content" id="content">
+      <!-- HERO SECTION START -->
+      <section class="hero-section d-flex align-items-center" id="intro">
+         <div class="intro_text">
+            <svg viewbox="0 0 1320 300">
+		               <text x="50%" y="50%" text-anchor="middle">HI</text>
+            </svg>
+         </div>
+         <div class="hero-video-wrap" aria-hidden="true">
+         </div>
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-md-6">
+                  <div class="hero-content-box">
+                     <span class="hero-sub-title">Hey, I’m Kartik</span>
+                     <h1 class="hero-title">Turn your business<br>into an automated system</h1>
+
+                     <div class="hero-image-box d-md-none text-center">
+                        <img src="assets/img/hero/me.png" alt="">
+
+
+                     </div>
+
+                     <p class="lead">
+                    I build systems that save time, bring more leads, and help you scale faster — without doing everything manually.
+                     <div class="button-box d-flex flex-wrap align-items-center">
+	                        <a href="#hero-calendly-modal" class="btn tj-btn-secondary hero-calendly-trigger" id="hero-calendly-trigger" aria-haspopup="dialog" aria-controls="hero-calendly-modal" aria-expanded="false">Book Your Free Strategy Call<i class="fa-solid fa-calendar-days"></i></a>
+                        <ul class="ul-reset social-icons">
+                           <li>
+                              <a href="https://x.com/kartiksoni2605" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                           </li>
+                           <li>
+                              <a href="https://www.instagram.com/__kartiksoni__/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                           </li>
+                           <li>
+                              <a href="www.linkedin.com/in/kartik-soni-596b31291" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                           </li>
+                           <li>
+                              <a href="https://github.com/kartiksoni543" target="_blank"><i class="fa-brands fa-github"></i></a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 d-none d-md-block">
+                  <div class="hero-image-box text-center">
+                     <img src="assets/img/hero/me.png" alt="">
+                  </div>
+               </div>
+            </div>
+            <div class="funfact-area">
+               <div class="row">
+                  <div class="col-6 col-lg-3">
+                     <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
+	                        <div class="number"><span class="odometer" data-count="4">0</span></div>
+		                        <div class="text">Years of <br>Experience</div>
+                     </div>
+                  </div>
+                  <div class="col-6 col-lg-3">
+                     <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
+	                        <div class="number"><span class="odometer" data-count="15">0</span>+</div>
+		                        <div class="text">Project <br>Completed</div>
+                     </div>
+                  </div>
+                  <div class="col-6 col-lg-3">
+                     <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
+	                        <div class="number"><span class="odometer" data-count="10">0</span>+</div>
+		                        <div class="text">Happy <br>Clients</div>
+                     </div>
+                  </div>
+                  <div class="col-6 col-lg-3">
+                     <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
+	                        <div class="number"><span class="odometer" data-count="25">0</span>+</div>
+		                        <div class="text">Technologies <br> Used</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+	      </section>
+	      <!-- HERO SECTION END -->
+
+	      <div class="hero-calendly-modal" id="hero-calendly-modal" aria-hidden="true">
+	         <div class="hero-calendly-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="hero-calendly-title">
+	            <button type="button" class="hero-calendly-modal__close" id="hero-calendly-close" aria-label="Close strategy call popup">&times;</button>
+	            <h2 id="hero-calendly-title" class="hero-calendly-sr-only">Book Your Free Strategy Call</h2>
+	            <iframe
+	               class="hero-calendly-modal__frame"
+	               src="https://calendly.com/kartikasoni534622/30min?hide_event_type_details=1"
+	               title="Book Your Free Strategy Call"
+	               loading="lazy">
+	            </iframe>
+	         </div>
+	      </div>
+
+      <section class="why-work-section" id="why-work-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="section-header text-center">
+                     <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Why Businesses Choose My AI Systems</h2>
+                     <p class="wow fadeInUp" data-wow-delay=".4s">
+                        I build AI-powered systems that automate operations, save time, and drive business growth.
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row why-work-grid">
+               <div class="col-lg-3 col-md-6">
+                  <div class="why-work-card wow fadeInUp" data-wow-delay=".3s">
+                     <div class="why-work-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                     </div>
+                     <h3 class="why-work-title">Automation First</h3>
+                     <p>Eliminate repetitive work by automating workflows using AI.</p>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="why-work-card wow fadeInUp" data-wow-delay=".4s">
+                     <div class="why-work-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                     </div>
+                     <h3 class="why-work-title">Growth-Focused</h3>
+                     <p>Systems designed to increase leads, efficiency, and revenue.</p>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="why-work-card wow fadeInUp" data-wow-delay=".5s">
+                     <div class="why-work-icon">
+                        <i class="fa-solid fa-code"></i>
+                     </div>
+                     <h3 class="why-work-title">Scalable Systems</h3>
+                     <p>Solutions that grow with your business.</p>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="why-work-card wow fadeInUp" data-wow-delay=".6s">
+                     <div class="why-work-icon">
+                        <i class="fa-solid fa-comments"></i>
+                     </div>
+                     <h3 class="why-work-title">Reliable Execution</h3>
+                     <p>Clean implementation and smooth communication.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- SERVICES SECTION START -->
+      <section class="services-section" id="services-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="section-header text-center">
+                     <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">My Quality Services</h2>
+                     <p class="wow fadeInUp" data-wow-delay=".4s">
+                        I help businesses build fast, scalable websites and digital products that drive real growth.
+                     </p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="services-widget position-relative">
+                     <div class="service-item current d-flex flex-wrap align-items-center wow fadeInUp" data-service="web" data-wow-delay=".5s">
+                        <div class="left-box d-flex flex-wrap align-items-center">
+                           <span class="number">01</span>
+                           <h3 class="service-title">Business Automation System</h3>
+                        </div>
+                        <div class="right-box">
+                           <p>
+		                        Automate your work, save time, and scale your business faster.
+                        </div>
+                        <i class="flaticon-up-right-arrow"></i>
+                        <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>
+                     </div>
+                     <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp" data-service="mobile" data-wow-delay=".6s">
+                        <div class="left-box d-flex flex-wrap align-items-center">
+                           <span class="number">02</span>
+                           <h3 class="service-title">AI Lead Generation Systems</h3>
+                        </div>
+                        <div class="right-box">
+                           <p>
+		                        Get more leads automatically and turn them into clients.
+                           </p>
+                        </div>
+                        <i class="flaticon-up-right-arrow"></i>
+                        <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>
+                     </div>
+                     <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp" data-service="uiux" data-wow-delay=".7s">
+                        <div class="left-box d-flex flex-wrap align-items-center">
+                           <span class="number">03</span>
+                           <h3 class="service-title">AI Customer Experience</h3>
+                        </div>
+                        <div class="right-box">
+                           <p>
+		                        Handle customer queries and support automatically with AI.
+                           </p>
+                        </div>
+                        <i class="flaticon-up-right-arrow"></i>
+                        <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>
+                     </div>
+                     <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp" data-service="saas" data-wow-delay=".8s">
+                        <div class="left-box d-flex flex-wrap align-items-center">
+                           <span class="number">04</span>
+                           <h3 class="service-title">Custom AI Workflow Solutions</h3>
+                        </div>
+                        <div class="right-box">
+                           <p>
+		                        Custom systems built to fit your business and how you work.
+                           </p>
+                        </div>
+                        <i class="flaticon-up-right-arrow"></i>
+                        <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>
+                     </div>
+                     <div class="active-bg wow fadeInUp" data-wow-delay=".5s"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- SERVICES SECTION END -->
+
+      <!-- start: Service Popup -->
+      <div id="service-wrapper" class="popup_content_area zoom-anim-dialog mfp-hide">
+         <div class="popup_modal_img">
+                        <img src="assets/img/services/Ai.png" alt="" loading="lazy" decoding="async">
+         </div>
+
+         <div class="popup_modal_content">
+            <div class="service_details">
+               <div class="row">
+                  <div class="col-lg-7 col-xl-8">
+                     <div class="service_details_content">
+                        <div class="service_info fade show" id="service-detail-content">
+                           <h6 class="subtitle">SERVICES</h6>
+                           <h2 class="title" id="service-detail-title">Business Automation &amp; AI Systems</h2>
+                           <div class="desc">
+                              <p id="service-detail-description">
+                                 Build AI-powered systems that automate operations, reduce manual work, and help businesses scale faster.
+                              </p>
+                           </div>
+
+                           <div class="service-detail-section">
+                              <h3 class="title">What You Get</h3>
+                              <ul class="service-benefit-list" id="service-detail-benefits">
+                                 <li>Automated workflows (lead capture, follow-ups, operations)</li>
+                                 <li>AI-powered integrations (APIs, chatbots, tools)</li>
+                                 <li>Scalable system architecture</li>
+                                 <li>Conversion-focused experience</li>
+                                 <li>Secure backend automation</li>
+                              </ul>
+                           </div>
+
+                           <div class="service-detail-section">
+                              <h3 class="title">Technologies I Use</h3>
+                              <div class="service-tech-stack" id="service-detail-tech">
+                                 <span>React</span>
+                                 <span>Next.js</span>
+                                 <span>Node.js</span>
+                                 <span>MongoDB</span>
+                                 <span>Firebase</span>
+                              </div>
+                           </div>
+
+                           <div class="service-detail-section">
+                              <h3 class="title">Best For</h3>
+                              <ul class="service-benefit-list service-best-for" id="service-detail-best-for">
+                                 <li>Businesses automating operations</li>
+                                 <li>Startups scaling systems</li>
+                                 <li>Agencies managing clients</li>
+                                 <li>Entrepreneurs growing online</li>
+                              </ul>
+                           </div>
+
+                           <div class="service-detail-section">
+                              <h3 class="title">Services Process</h3>
+                              <ul class="service-process-list" id="service-detail-process">
+                                 <li>Business analysis</li>
+                                 <li>AI system design</li>
+                                 <li>Automation setup</li>
+                                 <li>Optimization &amp; scaling</li>
+                              </ul>
+                           </div>
+
+                           <div class="service-detail-section">
+                              <h3 class="title">Real Example System</h3>
+                              <ul class="service-process-list" id="service-detail-example">
+                                 <li>A business captures leads automatically from its website, ads, and WhatsApp into one system.</li>
+                                 <li>AI qualifies each lead, tags priority, and sends instant follow-ups without manual effort.</li>
+                                 <li>The team gets organized tasks, alerts, and pipeline updates so no opportunity is missed.</li>
+                                 <li>This reduces admin work, speeds up response time, and helps the business close more revenue.</li>
+                              </ul>
+                           </div>
+
+                           <div class="service-detail-cta">
+                              <p>Have a project in mind? Let’s build something great together.</p>
+                              <a class="btn tj-btn-primary" href="#contact-section">Get Your Free AI Growth Strategy Call</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-5 col-xl-4">
+                     <div class="tj_main_sidebar">
+                        <div class="sidebar_widget services_list">
+                           <div class="widget_title">
+                              <h3 class="title">All Services</h3>
+                           </div>
+                           <ul>
+                              <li class="active">
+                                 <button type="button" data-service="web">
+                                    <i class="flaticon-web-design"></i>
+                                    Business Automation &amp; AI Systems
+                                 </button>
+                              </li>
+                              <li>
+                                 <button type="button" data-service="mobile">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                    AI Lead Generation Systems
+                                 </button>
+                              </li>
+                              <li>
+                                 <button type="button" data-service="uiux">
+                                    <i class="flaticon-ux-design"></i>
+                                    AI Customer Experience &amp; Chatbots
+                                 </button>
+                              </li>
+                              <li>
+                                 <button type="button" data-service="saas">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    Custom AI Workflow Solutions
+                                 </button>
+                              </li>
+                           </ul>
+                        </div>
+
+                        <div class="sidebar_widget contact_form">
+                           <div class="widget_title">
+                              <h3 class="title">Get in Touch</h3>
+                           </div>
+
+                           <form action="index.html">
+                              <div class="form_group">
+                                 <input type="text" name="name" id="name" placeholder="Name" autocomplete="off">
+                              </div>
+                              <div class="form_group">
+                                 <input type="email" name="semail" id="semail" placeholder="Email" autocomplete="off">
+                              </div>
+                              <div class="form_group">
+                                 <textarea name="smessage" id="smessage" placeholder="Your message" autocomplete="off"></textarea>
+                              </div>
+                              <div class="form_btn">
+                                 <button class="btn tj-btn-primary" type="submit">Send Message</button>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end: Service Popup -->
+      <script id="service-popup-data" type="application/json">
+         {
+            "web": {
+               "title": "Business Automation & AI Systems",
+               "description": "Build AI-powered systems that automate operations, reduce manual work, and help businesses scale faster.",
+               "benefits": [
+                  "Automated workflows (lead capture, follow-ups, operations)",
+                  "AI-powered integrations (APIs, chatbots, tools)",
+                  "Scalable system architecture",
+                  "Conversion-focused experience",
+                  "Secure backend automation"
+               ],
+               "technologies": ["React", "Next.js", "Node.js", "MongoDB", "Firebase"],
+               "bestFor": [
+                  "Businesses automating operations",
+                  "Startups scaling systems",
+                  "Agencies managing clients",
+                  "Entrepreneurs growing online"
+               ],
+               "process": [
+                  "Business analysis",
+                  "AI system design",
+                  "Automation setup",
+                  "Optimization & scaling"
+               ],
+               "example": [
+                  "A business captures leads automatically from its website, ads, and WhatsApp into one system.",
+                  "AI qualifies each lead, tags priority, and sends instant follow-ups without manual effort.",
+                  "The team gets organized tasks, alerts, and pipeline updates so no opportunity is missed.",
+                  "This reduces admin work, speeds up response time, and helps the business close more revenue."
+               ]
+            },
+            "mobile": {
+               "title": "AI Lead Generation Systems",
+               "description": "Create automated pipelines that capture, qualify, and convert leads without manual effort.",
+               "benefits": [
+                  "Automated workflows (lead capture, follow-ups, operations)",
+                  "AI-powered integrations (APIs, chatbots, tools)",
+                  "Scalable system architecture",
+                  "Conversion-focused experience",
+                  "Secure backend automation"
+               ],
+               "technologies": ["React", "Next.js", "Node.js", "MongoDB", "Firebase"],
+               "bestFor": [
+                  "Businesses automating operations",
+                  "Startups scaling systems",
+                  "Agencies managing clients",
+                  "Entrepreneurs growing online"
+               ],
+               "process": [
+                  "Business analysis",
+                  "AI system design",
+                  "Automation setup",
+                  "Optimization & scaling"
+               ],
+               "example": [
+                  "A lead system collects inquiries from landing pages, ads, and forms into one pipeline.",
+                  "AI scores and segments each lead based on intent, source, and fit.",
+                  "Automated follow-ups nurture prospects by email, chat, or CRM tasks without manual chasing.",
+                  "This helps the business convert more leads while reducing response delays."
+               ]
+            },
+            "uiux": {
+               "title": "AI Customer Experience & Chatbots",
+               "description": "Automate customer interactions, support, and engagement using intelligent AI systems.",
+               "benefits": [
+                  "Automated workflows (lead capture, follow-ups, operations)",
+                  "AI-powered integrations (APIs, chatbots, tools)",
+                  "Scalable system architecture",
+                  "Conversion-focused experience",
+                  "Secure backend automation"
+               ],
+               "technologies": ["React", "Next.js", "Node.js", "MongoDB", "Firebase"],
+               "bestFor": [
+                  "Businesses automating operations",
+                  "Startups scaling systems",
+                  "Agencies managing clients",
+                  "Entrepreneurs growing online"
+               ],
+               "process": [
+                  "Business analysis",
+                  "AI system design",
+                  "Automation setup",
+                  "Optimization & scaling"
+               ],
+               "example": [
+                  "An AI chatbot answers customer questions instantly across website, WhatsApp, and support channels.",
+                  "It pulls from FAQs, documents, and business rules to provide accurate responses.",
+                  "Complex cases are handed to the team with full conversation context.",
+                  "This improves customer experience while reducing support workload."
+               ]
+            },
+            "saas": {
+               "title": "Custom AI Workflow Solutions",
+               "description": "Tailored automation systems designed specifically for your business processes and goals.",
+               "benefits": [
+                  "Automated workflows (lead capture, follow-ups, operations)",
+                  "AI-powered integrations (APIs, chatbots, tools)",
+                  "Scalable system architecture",
+                  "Conversion-focused experience",
+                  "Secure backend automation"
+               ],
+               "technologies": ["React", "Next.js", "Node.js", "MongoDB", "Firebase"],
+               "bestFor": [
+                  "Businesses automating operations",
+                  "Startups scaling systems",
+                  "Agencies managing clients",
+                  "Entrepreneurs growing online"
+               ],
+               "process": [
+                  "Business analysis",
+                  "AI system design",
+                  "Automation setup",
+                  "Optimization & scaling"
+               ],
+               "example": [
+                  "A business maps its internal sales, operations, and reporting workflow into one custom AI system.",
+                  "Manual handoffs are replaced with automated triggers, updates, and task routing.",
+                  "The system connects tools like CRM, email, forms, and dashboards into one process.",
+                  "This creates smoother execution, fewer errors, and faster growth capacity."
+               ]
+            }
+         }
+      </script>
+
+      <!-- PORTFOLIO SECTION START -->
+      <section class="portfolio-section" id="works-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="section-header text-center">
+                     <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">My Recent Works</h2>
+                     <p class="wow fadeInUp" data-wow-delay=".4s">
+                        We transform your ideas into distinctive web experiences that inspire your audience and grow your business.
+                     </p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="portfolio-filter text-center wow fadeInUp" data-wow-delay=".5s">
+                     <div class="button-group filter-button-group">
+	                        <button data-filter="*" class="active">All</button>
+		                        <button data-filter=".uxui">UX/UI</button>
+		                        <button data-filter=".branding">Branding</button>
+		                        <button data-filter=".mobile-app">Apps</button>
+                        <div class="active-bg"></div>
+                     </div>
+                  </div>
+
+                  <div class="portfolio-box wow fadeInUp" data-wow-delay=".6s">
+                     <div class="portfolio-sizer"></div>
+                     <div class="gutter-sizer"></div>
+                     <div class="portfolio-item branding">
+                        <div class="image-box">
+                           <img src="assets/img/portfolio/2.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div class="content-box">
+                           <h3 class="portfolio-title">HedgeMyFunds</h3>
+                           <p>Fintech branding & investment platform.</p>
+                           <i class="flaticon-up-right-arrow"></i>
+                           <button data-mfp-src="#portfolio-1" class="portfolio-link modal-popup"></button>
+                        </div>
+                     </div>
+                     <div class="portfolio-item uxui">
+                        <div class="image-box">
+                           <img src="assets/img/portfolio/3.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div class="content-box">
+                           <h3 class="portfolio-title">Luxury Travel Concierge Website</h3>
+                           <p>Premium design for luxury travel experiences.</p>
+                           <i class="flaticon-up-right-arrow"></i>
+                           <button data-mfp-src="#portfolio-2" class="portfolio-link modal-popup"></button>
+                        </div>
+                     </div>
+                     <div class="portfolio-item mobile-app">
+                        <div class="image-box">
+                           <img src="assets/img/portfolio/4.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div class="content-box">
+                           <h3 class="portfolio-title">AIDEOA</h3>
+                           <p>All India Diploma Engineers & Officials Association.</p>
+                           <i class="flaticon-up-right-arrow"></i>
+                           <button data-mfp-src="#portfolio-3" class="portfolio-link modal-popup"></button>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- PORTFOLIO SECTION END -->
+
+      <!-- start: Portfolio Popup -->
+      <div id="portfolio-1" class="popup_content_area zoom-anim-dialog mfp-hide">
+         <div class="popup_modal_img">
+            <img src="assets/img/portfolio/2.png" alt="" loading="lazy" decoding="async">
+         </div>
+
+         <div class="popup_modal_content">
+            <div class="portfolio_info">
+               <div class="portfolio_info_text">
+                  <h2 class="title">HedgeMyFunds – Investment Platform Website</h2>
+                  <div class="desc">
+                     <p>
+                        I designed and developed <strong>HedgeMyFunds</strong>, a modern investment platform
+            that simplifies hedge fund strategies for individual and institutional investors.
+                     </p>
+                  </div>
+                  <a href="https://www.hedgemyfunds.com/" class="btn tj-btn-primary" target="_blank">live preview <i class="fal fa-arrow-right"></i></a>
+               </div>
+               <div class="portfolio_info_items">
+                  <div class="info_item">
+                     <div class="key">Category</div>
+                     <div class="value">Web Design</div>
+                  </div>
+                  <div class="info_item">
+                     <div class="key">Client</div>
+                     <div class="value">Hedmyfunds</div>
+                  </div>
+                  <div class="info_item">
+                     <div class="key">Start Date</div>
+                     <div class="value">August 20, 2023</div>
+                  </div>
+                  <div class="info_item">
+                     <div class="key">Designer</div>
+                     <div class="value"><a href="#">Kartik Soni</a></div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="portfolio_gallery owl-carousel">
+               <div class="gallery_item">
+                  <img src="assets/img/portfolio-gallery/p1.png" alt="" loading="lazy" decoding="async">
+               </div>
+               <div class="gallery_item">
+                  <img src="assets/img/portfolio-gallery/p2.png" alt="" loading="lazy" decoding="async">
+               </div>
+               <div class="gallery_item">
+                  <img src="assets/img/portfolio-gallery/p3.png" alt="" loading="lazy" decoding="async">
+               </div>
+               <div class="gallery_item">
+                  <img src="assets/img/portfolio-gallery/p-gallery-4.jpg" alt="" loading="lazy" decoding="async">
+               </div>
+            </div>
+
+            <div class="portfolio_description">
+               <h3 class="title">Project Description</h3>
+               <div class="desc">
+                  <p>
+                     The platform features a clean, user-friendly interface with tools for
+            portfolio management, market analysis, and secure client interaction.
+            This project highlights my expertise in responsive web design, UX/UI,
+            and financial services integration
+                  </p>
+
+               </div>
+            </div>
+
+            <div class="portfolio_story_approach">
+               <div class="portfolio_story">
+                  <div class="story_content">
+                     <p>
+                       
+                     </p>
+                  </div>
+               </div>
+               <div class="portfolio_approach">
+                  <div class="approach_title">
+                     <h2 class="title">OUR APPROACH</h2>
+                  </div>
+                  <div class="approach_content">
+                     <p>
+                        The development of HedgeMyFunds followed a user-centric and scalable approach. I began by analyzing investor needs and simplifying complex hedge fund concepts into an intuitive UI. The platform was built using React and Next.js for high performance, SEO optimization, and responsive design, while Node.js handled secure backend operations and data management. Strong focus was placed on usability, security, and performance, ensuring smooth portfolio management, reliable market insights, and seamless client interaction across all devices.
+                     </p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="portfolio_navigation">
+               <div class="navigation_item prev-project">
+                  <a href="#portfolio-3" data-mfp-src="#portfolio-3" class="project modal-popup">
+                     <i class="fal fa-arrow-left"></i>
+                     <div class="nav_project">
+                        <div class="label">Previous Project</div>
+                        <h3 class="title">AIDEOA</h3>
+                     </div>
+                  </a>
+               </div>
+
+               <div class="navigation_item next-project">
+                  <a href="#portfolio-2" data-mfp-src="#portfolio-2" class="project modal-popup">
+                     <div class="nav_project">
+                        <div class="label">Next Project</div>
+                        <h3 class="title">Luxury Travel</h3>
+                     </div>
+                     <i class="fal fa-arrow-right"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end: Portfolio Popup -->
+
+        <div id="portfolio-2" class="popup_content_area zoom-anim-dialog mfp-hide">
+         <div class="popup_modal_img">
+            <img src="assets/img/portfolio/3.png" alt="" loading="lazy" decoding="async">
+         </div>
+
+         <div class="popup_modal_content">
+            <div class="portfolio_info">
+               <div class="portfolio_info_text">
+                  <h2 class="title">Luxury Travel Concierge Website</h2>
+                  <div class="desc">
+                     <p>
+                        I designed and developed <strong>TheLuxuryHotelConcierge.com</strong>, a premium
+    website offering high-end hotel and travel concierge services for luxury travelers.
+                     </p>
+                  </div>
+                  <a href="https://theluxuryhotelconcierge.com/"  class="btn tj-btn-primary" target="_blank">live preview <i class="fal fa-arrow-right"></i></a>
+               </div>
+               <div class="portfolio_info_items">
+                  <div class="info_item">
+                     <div class="key">Category</div>
+                     <div class="value">Web Design</div>
+                  </div>
+                  <div class="info_item">
+                     <div class="key">Client</div>
+                     <div class="value">Hedmyfunds</div>
+                  </div>
+                  <div class="info_item">
+                     <div class="key">Start Date</div>
+                     <div class="value">August 20, 2023</div>
+                  </div>
+                  <div class="info_item">
+                     <div class="key">Designer</div>
+                     <div class="value"><a href="#">Kartik Soni</a></div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="portfolio_gallery owl-carousel">
+               <div class="gallery_item">
+                  <img src="assets/img/portfolio-gallery/p1.png" alt="" loading="lazy" decoding="async">
+               </div>
+               <div class="gallery_item">
+                  <img src="assets/img/portfolio-gallery/p2.png" alt="" loading="lazy" decoding="async">
+               </div>
+               <div class="gallery_item">
+                  <img src="assets/img/portfolio-gallery/p3.png" alt="" loading="lazy" decoding="async">
+               </div>
+               <div class="gallery_item">
+                  <img src="assets/img/portfolio-gallery/p-gallery-4.jpg" alt="" loading="lazy" decoding="async">
+               </div>
+            </div>
+
+            <div class="portfolio_description">
+               <h3 class="title">Project Description</h3>
+               <div class="desc">
+                  <p>
+                     The platform features an elegant, responsive design with intuitive UX/UI,
+    custom content layouts, and performance optimization to deliver a seamless
+    experience across all devices.
+                  </p>
+
+               </div>
+            </div>
+
+            <div class="portfolio_story_approach">
+               <div class="portfolio_story">
+                  <div class="story_content">
+                     <p>
+                       
+                     </p>
+                  </div>
+               </div>
+               <div class="portfolio_approach">
+                  <div class="approach_title">
+                     <h2 class="title">OUR APPROACH</h2>
+                  </div>
+                  <div class="approach_content">
+                     <p>
+                        Our approach focused on creating a visually refined and user-centric experience
+    that reflects the exclusivity of luxury hotel and travel concierge services. We combined elegant UI/UX design with responsive development and performance
+    optimization to ensure smooth navigation, fast load times, and a seamless
+    experience across all devices.
+                     </p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="portfolio_navigation">
+               <div class="navigation_item prev-project">
+                  <a href="#portfolio-1" data-mfp-src="#portfolio-1" class="project modal-popup">
+                     <i class="fal fa-arrow-left"></i>
+                     <div class="nav_project">
+                        <div class="label">Previous Project</div>
+                        <h3 class="title">HedgeMyFunds</h3>
+                     </div>
+                  </a>
+               </div>
+
+               <div class="navigation_item next-project">
+                  <a href="#portfolio-3" data-mfp-src="#portfolio-3" class="project modal-popup">
+                     <div class="nav_project">
+                        <div class="label">Next Project</div>
+                        <h3 class="title">AIDEOA</h3>
+                     </div>
+                     <i class="fal fa-arrow-right"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end: Portfolio Popup -->
+       <div id="portfolio-3" class="popup_content_area zoom-anim-dialog mfp-hide">
+         <div class="popup_modal_img">
+            <img src="assets/img/portfolio/4.png" alt="" loading="lazy" decoding="async">
+         </div>
+
+         <div class="popup_modal_content">
+            <div class="portfolio_info">
+               <div class="portfolio_info_text">
+                  <h2 class="title">AIDEOA Official Website – Government Association Portal</h2>
+                  <div class="desc">
+                     <p>
+                        I designed and developed the official website for <strong>AIDEOA</strong>, a
+	government association portal built to deliver a reliable and user-friendly
+	digital experience for its members.
+                     </p>
+                  </div>
+                  <a href="https://www.aideoa.org.in/" class="btn tj-btn-primary" target="_blank">live preview <i class="fal fa-arrow-right"></i></a>
+               </div>
+               <div class="portfolio_info_items">
+                  <div class="info_item">
+                     <div class="key">Category</div>
+                     <div class="value">Web Design</div>
+                  </div>
+                  <div class="info_item">
+                     <div class="key">Client</div>
+                     <div class="value">AIDEOA</div>
+                  </div>
+                  <div class="info_item">
+                     <div class="key">Start Date</div>
+                     <div class="value">June 20, 2024</div>
+                  </div>
+                  <div class="info_item">
+                     <div class="key">Designer</div>
+                     <div class="value"><a href="#">Kartik Soni</a></div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="portfolio_gallery owl-carousel">
+               <div class="gallery_item">
+                  <img src="assets/img/portfolio-gallery/p1.png" alt="" loading="lazy" decoding="async">
+               </div>
+               <div class="gallery_item">
+                  <img src="assets/img/portfolio-gallery/p2.png" alt="" loading="lazy" decoding="async">
+               </div>
+               <div class="gallery_item">
+                  <img src="assets/img/portfolio-gallery/p3.png" alt="" loading="lazy" decoding="async">
+               </div>
+               
+            </div>
+
+            <div class="portfolio_description">
+               <h3 class="title">Project Description</h3>
+               <div class="desc">
+                  <p>
+	                    Designed and developed the official website for AIDEOA (All India Diploma Engineers & Officials Association), a government association portal, using the MERN stack. The platform delivers a responsive and reliable user experience with a strong emphasis on intuitive UI/UX, ensuring accessibility for a diverse member base while supporting secure, scalable, and efficient content management.
+                    </p>
+               </div>
+            </div>
+
+            <div class="portfolio_story_approach">
+               <div class="portfolio_story">
+                  <div class="story_content">
+                     <p>
+                       
+                     </p>
+                  </div>
+               </div>
+               <div class="portfolio_approach">
+                  <div class="approach_title">
+                     <h2 class="title">OUR APPROACH</h2>
+                  </div>
+                  <div class="approach_content">
+                     <p>
+                        Our approach focused on building a structured and dependable digital platform
+    that aligns with the official nature of a government association.
+    Using the MERN stack, we prioritized intuitive UI/UX, responsive design, and
+    efficient data management to ensure a secure, accessible, and user-friendly
+    experience for all members.
+                     </p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="portfolio_navigation">
+               <div class="navigation_item prev-project">
+                  <a href="#portfolio-2" data-mfp-src="#portfolio-2" class="project modal-popup">
+                     <i class="fal fa-arrow-left"></i>
+                     <div class="nav_project">
+                        <div class="label">Previous Project</div>
+                        <h3 class="title">Luxury Travel</h3>
+                     </div>
+                  </a>
+               </div>
+
+               <div class="navigation_item next-project">
+                  <a href="#portfolio-1" data-mfp-src="#portfolio-1" class="project modal-popup">
+                     <div class="nav_project">
+                        <div class="label">Next Project</div>
+                        <h3 class="title">HedgeMyFunds</h3>
+                     </div>
+                     <i class="fal fa-arrow-right"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end: Portfolio Popup -->
+
+      <!-- RESUME SECTION START -->
+      <section class="resume-section" id="resume-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="section-header wow fadeInUp" data-wow-delay=".3s">
+                     <h2 class="section-title"><i class="flaticon-recommendation"></i> My Experience</h2>
+                  </div>
+
+                  <div class="resume-widget">
+                     <div class="resume-item wow fadeInLeft" data-wow-delay=".4s">
+		                        <div class="time">2024 - Present</div>
+		                        <h3 class="resume-title">Lead Developer</h3>
+		                        <div class="institute">Aumiqx Technology</div>
+                     </div>
+                     <div class="resume-item wow fadeInLeft" data-wow-delay=".5s">
+		                        <div class="time">2024 - 2025</div>
+		                        <h3 class="resume-title">Full Stack Web Developer</h3>
+		                        <div class="institute">Aumiqx Technology</div>
+                     </div>
+                     <div class="resume-item wow fadeInLeft" data-wow-delay=".6s">
+		                        <div class="time">2023 - 2024</div>
+		                        <h3 class="resume-title">UI/UX Designer</h3>
+		                        <div class="institute">Growix Technology</div>
+                     </div>
+                     <div class="resume-item wow fadeInLeft" data-wow-delay=".7s">
+		                        <div class="time">2022 - 2023</div>
+		                        <h3 class="resume-title">Junior Graphics Designer</h3>
+		                        <div class="institute">Growix Technology</div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col-md-6">
+                  <div class="section-header wow fadeInUp" data-wow-delay=".4s">
+                     <h2 class="section-title"><i class="flaticon-graduation-cap"></i> My Education</h2>
+                  </div>
+
+                  <div class="resume-widget">
+                     <div class="resume-item wow fadeInRight" data-wow-delay=".5s">
+		                        <div class="time">2016 - 2017</div>
+		                        <h3 class="resume-title">Matriculation</h3>
+		                        <div class="institute">Goldwin Sen. Sec. School</div>
+                     </div>
+                     <div class="resume-item wow fadeInRight" data-wow-delay=".6s">
+		                        <div class="time">2018 - 2019</div>
+		                        <h3 class="resume-title">Intermediate</h3>
+		                        <div class="institute">Goldwin Sen. Sec. School</div>
+                     </div>
+                     <div class="resume-item wow fadeInRight" data-wow-delay=".7s">
+		                        <div class="time">2019 - 2021</div>
+		                        <h3 class="resume-title">Diploma in Computer Science</h3>
+		                        <div class="institute">Govt. Polytechnic College Sundernagar</div>
+                     </div>
+                     <div class="resume-item wow fadeInRight" data-wow-delay=".8s">
+		                        <div class="time">2021 - 2025</div>
+		                        <h3 class="resume-title">Bachelor of Engineering in Computer Science</h3>
+		                        <div class="institute">Chandigarh University</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- RESUME SECTION END -->
+
+      <!-- SKILLS SECTION START -->
+      <section class="skills-section" id="skills-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="section-header text-center">
+                     <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">My Skills</h2>
+                     <p class="wow fadeInUp" data-wow-delay=".4s">
+                        I turn your ideas into polished web experiences that connect with your audience and support your business.
+                     </p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="skills-widget d-flex flex-wrap justify-content-center align-items-center">
+                     <div class="skill-item wow fadeInUp" data-wow-delay=".3s">
+                        <div class="skill-inner">
+                           <div class="icon-box">
+                              <img src="assets/img/icons/figma.svg" alt="" loading="lazy" decoding="async">
+                           </div>
+                           
+                        </div>
+		                        <p>Figma</p>
+                     </div>
+                     <div class="skill-item wow fadeInUp" data-wow-delay=".4s">
+                        <div class="skill-inner">
+                           <div class="icon-box">
+                              <img src="assets/img/icons/node.js.svg" alt="" loading="lazy" decoding="async">
+                           </div>
+                        </div>
+		                        <p>Node.js</p>
+                     </div>
+                     <div class="skill-item wow fadeInUp" data-wow-delay=".5s">
+                        <div class="skill-inner">
+                           <div class="icon-box">
+                              <img src="assets/img/icons/MongoDB.svg" alt="" loading="lazy" decoding="async">
+                           </div>
+                        
+                        </div>
+		                        <p>MongoDb</p>
+                     </div>
+                     <div class="skill-item wow fadeInUp" data-wow-delay=".6s">
+                        <div class="skill-inner">
+                           <div class="icon-box">
+                              <img src="assets/img/icons/wp.svg" alt="" loading="lazy" decoding="async">
+                           </div>
+                        </div>
+		                        <p>WordPress</p>
+                     </div>
+                     <div class="skill-item wow fadeInUp" data-wow-delay=".7s">
+                        <div class="skill-inner">
+                           <div class="icon-box">
+                              <img src="assets/img/icons/react.svg" alt="" loading="lazy" decoding="async">
+                           </div>
+                         
+                        </div>
+		                        <p>React</p>
+                     </div>
+                     <div class="skill-item wow fadeInUp" data-wow-delay=".8s">
+                        <div class="skill-inner">
+                           <div class="icon-box">
+                              <img src="assets/img/icons/next.js.svg" alt="" loading="lazy" decoding="async">
+                           </div>
+                          
+                        </div>
+		                        <p>Next.js</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- SKILLS SECTION END -->
+
+      <!-- TESTIMONIAL SECTION START -->
+      <section class="testimonial-section" id="testimonials-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-5">
+                  <div class="section-header">
+                     <h2 class="section-title wow fadeInLeft" data-wow-delay=".3s">My Client's Stories</h2>
+                     <p class="wow fadeInLeft" data-wow-delay=".4s">Empowering people in new a digital journey with my
+	                        super services</p>
+                  </div>
+               </div>
+               <div class="col-lg-7 col-xl-6 offset-xl-1">
+                  <div class="testimonials-widget wow fadeInRight" data-wow-delay=".5s">
+                     <div class="owl-carousel testimonial-carousel">
+                        <div class="testimonial-item">
+                           <div class="top-area d-flex flex-wrap justify-content-between">
+                              <div class="logo-box">
+                                 <div class="client-logo-badge cosmic">Cosmic Sport</div>
+                              </div>
+                              <div class="image-box">
+                                 <img src="assets/img/testimonials/user/1.jpg" alt="" loading="lazy" decoding="async">
+                              </div>
+                           </div>
+                           <div class="icon-box">
+                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint0_linear_263_588)"></path>
+                                 <defs>
+                                    <lineargradient id="paint0_linear_263_588" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
+                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
+                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                 </defs>
+                              </svg>
+                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint0_linear_263_589)"></path>
+                                 <defs>
+                                    <lineargradient id="paint0_linear_263_589" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
+                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
+                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                 </defs>
+                              </svg>
+	                           </div>
+	                           <div class="testimonial-rating" aria-label="5 out of 5 stars">
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                           </div>
+			                           <p class="quote">“The final product felt sharper, faster, and far more premium than our previous site. The design decisions were thoughtful, and every section supported a clear business goal.”</p>
+	                           <h4 class="name">Brandon Fraser</h4>
+			                           <span class="designation">Product Lead, Cosmic Sport</span>
+                        </div>
+                        <div class="testimonial-item">
+                           <div class="top-area d-flex flex-wrap justify-content-between">
+                              <div class="logo-box">
+                                 <div class="client-logo-badge hedge">HedgeMyFund</div>
+                              </div>
+                              <div class="image-box">
+                                 <img src="assets/img/testimonials/user/2.jpg" alt="" loading="lazy" decoding="async">
+                              </div>
+                           </div>
+                           <div class="icon-box">
+                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint0_linear_263_511)"></path>
+                                 <defs>
+                                    <lineargradient id="paint0_linear_263_511" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
+                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
+                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                 </defs>
+                              </svg>
+                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint0_linear_263_510)"></path>
+                                 <defs>
+                                    <lineargradient id="paint0_linear_263_510" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
+                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
+                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                 </defs>
+                              </svg>
+	                           </div>
+	                           <div class="testimonial-rating" aria-label="5 out of 5 stars">
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                           </div>
+			                           <p class="quote">“What impressed us most was the balance between visual quality and usability. The new interface made our brand look stronger and gave users a much smoother journey.”</p>
+	                           <h4 class="name">Tim Bailey</h4>
+			                           <span class="designation">Marketing Director, HedgeMyFund</span>
+                        </div>
+                        <div class="testimonial-item">
+                           <div class="top-area d-flex flex-wrap justify-content-between">
+                              <div class="logo-box">
+                                 <div class="client-logo-badge northaxis">North Axis Studio</div>
+                              </div>
+                              <div class="image-box">
+                                 <img src="assets/img/testimonials/user/1.jpg" alt="" loading="lazy" decoding="async">
+                              </div>
+                           </div>
+                           <div class="icon-box">
+                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint0_linear_263_512)"></path>
+                                 <defs>
+                                    <lineargradient id="paint0_linear_263_512" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
+                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
+                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                 </defs>
+                              </svg>
+                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint0_linear_263_513)"></path>
+                                 <defs>
+                                    <lineargradient id="paint0_linear_263_513" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
+                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
+                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                 </defs>
+                              </svg>
+	                           </div>
+	                           <div class="testimonial-rating" aria-label="5 out of 5 stars">
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                           </div>
+			                           <p class="quote">“We needed a portfolio experience that looked modern and communicated trust immediately. The result was clean, strategic, and noticeably better received by our clients.”</p>
+	                           <h4 class="name">Nadia Collins</h4>
+	                           <span class="designation">Founder, North Axis Studio</span>
+                        </div>
+                        <div class="testimonial-item">
+                           <div class="top-area d-flex flex-wrap justify-content-between">
+                              <div class="logo-box">
+                                 <div class="client-logo-badge aideoa">AIDEOA</div>
+                              </div>
+                              <div class="image-box">
+                                 <img src="assets/img/testimonials/user/2.jpg" alt="" loading="lazy" decoding="async">
+                              </div>
+                           </div>
+                           <div class="icon-box">
+                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint0_linear_263_514)"></path>
+                                 <defs>
+                                    <lineargradient id="paint0_linear_263_514" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
+                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
+                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                 </defs>
+                              </svg>
+                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint0_linear_263_515)"></path>
+                                 <defs>
+                                    <lineargradient id="paint0_linear_263_515" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
+                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
+                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                 </defs>
+                              </svg>
+	                           </div>
+	                           <div class="testimonial-rating" aria-label="5 out of 5 stars">
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                           </div>
+			                           <p class="quote">“From the first draft to the final launch, the process was professional and efficient. The new design gave our business a more confident presence online.”</p>
+	                           <h4 class="name">Daniel Foster</h4>
+	                           <span class="designation">Operations Head, AIDEOA</span>
+                        </div>
+                        <div class="testimonial-item">
+                           <div class="top-area d-flex flex-wrap justify-content-between">
+                              <div class="logo-box">
+                                 <div class="client-logo-badge luxurytravel">Luxury Travel Agency</div>
+                              </div>
+                              <div class="image-box">
+                                 <img src="assets/img/testimonials/user/1.jpg" alt="" loading="lazy" decoding="async">
+                              </div>
+                           </div>
+                           <div class="icon-box">
+                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint0_linear_263_512)"></path>
+                                 <defs>
+                                    <lineargradient id="paint0_linear_263_512" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
+                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
+                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                 </defs>
+                              </svg>
+                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint0_linear_263_513)"></path>
+                                 <defs>
+                                    <lineargradient id="paint0_linear_263_513" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
+                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
+                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                 </defs>
+                              </svg>
+	                           </div>
+	                           <div class="testimonial-rating" aria-label="5 out of 5 stars">
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                           </div>
+			                           <p class="quote">“Our old website looked functional but forgettable. The redesign gave it personality, structure, and a much clearer message for the kind of clients we want to attract.”</p>
+	                           <h4 class="name">Olivia Bennett</h4>
+	                           <span class="designation">Creative Manager, Luxury Travel Agency</span>
+                        </div>
+                        <div class="testimonial-item">
+                           <div class="top-area d-flex flex-wrap justify-content-between">
+                              <div class="logo-box">
+                                 <div class="client-logo-badge ncompany">N Company</div>
+                              </div>
+                              <div class="image-box">
+                                 <img src="assets/img/testimonials/user/2.jpg" alt="" loading="lazy" decoding="async">
+                              </div>
+                           </div>
+                           <div class="icon-box">
+                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint0_linear_263_514)"></path>
+                                 <defs>
+                                    <lineargradient id="paint0_linear_263_514" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
+                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
+                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                 </defs>
+                              </svg>
+                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint0_linear_263_515)"></path>
+                                 <defs>
+                                    <lineargradient id="paint0_linear_263_515" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
+                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
+                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                 </defs>
+                              </svg>
+	                           </div>
+	                           <div class="testimonial-rating" aria-label="5 out of 5 stars">
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                              <i class="fa-solid fa-star"></i>
+	                           </div>
+			                           <p class="quote">“The work was not just visually impressive, it was commercially smart. We now have a site that presents our services clearly and leaves a stronger first impression.”</p>
+	                           <h4 class="name">Ethan Brooks</h4>
+	                           <span class="designation">Managing Partner, N Company</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- TESTIMONIAL SECTION END -->
+
+      <!-- BLOG SECTION STAR -->
+      <section class="blog-section" id="blog-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="section-header text-center">
+                     <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Recent Blogs</h2>
+                     <p class="wow fadeInUp" data-wow-delay=".4s">
+                        Insights on design, product thinking, and digital execution to help brands build stronger
+                        experiences and make smarter creative decisions.
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-4 col-md-6">
+                  <div class="blog-item wow fadeInUp" data-wow-delay=".5s">
+                     <div class="blog-thumb">
+		                        <a href="blog-details.php">
+                           <img src="assets/img/blog/1.jpg" alt="" loading="lazy" decoding="async">
+                        </a>
+		                        <a href="#" class="category">Tutorial</a>
+                     </div>
+
+                     <div class="blog-content">
+                        <div class="blog-meta">
+                           <ul class="ul-reset">
+		                              <li><i class="fa-light fa-calendar-days"></i> Feb 14, 2025</li>
+		                              <li><i class="fa-light fa-comments"></i> <a href="#">Comment (0)</a></li>
+                           </ul>
+                        </div>
+		                        <h3 class="blog-title"><a href="blog-details.php">top 10 ui ux designers</a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6">
+                  <div class="blog-item wow fadeInUp" data-wow-delay=".6s">
+                     <div class="blog-thumb">
+		                        <a href="blog-app-development.php">
+                           <img src="assets/img/blog/2.jpg" alt="" loading="lazy" decoding="async">
+                        </a>
+		                        <a href="#" class="category">TIPS</a>
+                     </div>
+                     <div class="blog-content">
+                        <div class="blog-meta">
+                           <ul class="ul-reset">
+		                              <li><i class="fa-light fa-calendar-days"></i> Apr 09, 2025</li>
+		                              <li><i class="fa-light fa-comments"></i> <a href="#">Comment (0)</a></li>
+                           </ul>
+                        </div>
+		                        <h3 class="blog-title"><a href="blog-app-development.php">App Development Guides</a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6">
+                  <div class="blog-item wow fadeInUp" data-wow-delay=".7s">
+                     <div class="blog-thumb">
+		                        <a href="blog-graphic-design.php">
+                           <img src="assets/img/blog/3.jpg" alt="" loading="lazy" decoding="async">
+                        </a>
+		                        <a href="#" class="category">FREEBIES</a>
+                     </div>
+                     <div class="blog-content">
+                        <div class="blog-meta">
+                           <ul class="ul-reset">
+		                              <li><i class="fa-light fa-calendar-days"></i> Jun 21, 2025</li>
+		                              <li><i class="fa-light fa-comments"></i> <a href="#">Comment (0)</a></li>
+                           </ul>
+                        </div>
+		                        <h3 class="blog-title"><a href="blog-graphic-design.php">learn graphic design free</a></h3>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- BLOG SECTION END -->
+
+      <!-- CONTACT SECTION START -->
+      <section class="contact-section" id="contact-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 col-md-7 order-2 order-md-1">
+                  <div class="contact-form-box wow fadeInLeft" data-wow-delay=".3s">
+                     <div class="section-header">
+		                        <h2 class="section-title">Let’s work together!</h2>
+		                        <p>I design and build clean, effective digital experiences with a focus on quality and simplicity. Let’s discuss your project.</p>
+                     </div>
+
+                     <div class="tj-contact-form">
+                        <form id="contact-form">
+                           <div class="row gx-3">
+                              <div class="col-sm-6">
+                                 <div class="form_group">
+                                    <input type="text" name="conName" id="conName" placeholder="First name" autocomplete="off">
+                                    <span class="field-error" data-for="conName"></span>
+                                 </div>
+                              </div>
+                              <div class="col-sm-6">
+                                 <div class="form_group">
+                                    <input type="text" name="conLName" id="conLName" placeholder="Last name" autocomplete="off">
+                                    <span class="field-error" data-for="conLName"></span>
+                                 </div>
+                              </div>
+                              <div class="col-sm-6">
+                                 <div class="form_group">
+		                                    <input type="email" name="conEmail" id="conEmail" placeholder="Email address" autocomplete="off">
+                                    <span class="field-error" data-for="conEmail"></span>
+                                 </div>
+                              </div>
+                              <div class="col-sm-6">
+                                 <div class="form_group">
+		                                    <input type="tel" name="conPhone" id="conPhone" placeholder="Phone number" autocomplete="off">
+                                    <span class="field-error" data-for="conPhone"></span>
+                                 </div>
+                              </div>
+	                              <div class="col-12">
+	                                 <div class="form_group">
+	                                    <select name="conService" id="conService" class="tj-nice-select">
+			                                       <option value="" selected="" disabled="">Choose Service</option>
+			                                       <option value="Branding Design">Branding Design</option>
+			                                       <option value="Web Design">Web Design</option>
+			                                       <option value="UI/UX Design">UI/UX Design</option>
+			                                       <option value="App Design">App Design</option>
+	                                    </select>
+	                                    <span class="field-error" data-for="conService"></span>
+	                                 </div>
+	                              </div>
+	                              <div class="col-12">
+	                                 <div class="form_group">
+	                                    <select name="conBudget" id="conBudget" class="tj-nice-select">
+			                                       <option value="" selected="" disabled="">Choose Budget</option>
+			                                       <option value="Below $500">Below $500</option>
+			                                       <option value="$500 - $1,000">$500 - $1,000</option>
+			                                       <option value="$1,000 - $3,000">$1,000 - $3,000</option>
+			                                       <option value="$3,000 - $5,000">$3,000 - $5,000</option>
+			                                       <option value="$5,000+">$5,000+</option>
+	                                    </select>
+	                                    <span class="field-error" data-for="conBudget"></span>
+	                                 </div>
+	                              </div>
+	                              <div class="col-12">
+	                                 <div class="form_group">
+			                                    <textarea name="conMessage" id="conMessage" placeholder="Message"></textarea>
+	                                    <span class="field-error" data-for="conMessage"></span>
+	                                 </div>
+                              </div>
+                              <div class="col-12">
+                                 <div class="form_actions">
+                                    <div class="form_btn">
+                                       <button type="submit" class="btn tj-btn-primary tj-submit-btn">
+		                                          <span class="btn-label">Send Message</span>
+                                          <span class="btn-loader" aria-hidden="true"></span>
+                                       </button>
+                                    </div>
+		                                    <p class="form-trust-note">I usually respond within 24 hours.</p>
+                                    <div class="form-success-message" id="contact-form-success" aria-live="polite">
+		                                       Thank you! Your message has been received. I will contact you soon.
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col-lg-5 offset-lg-1 col-md-5 d-flex flex-wrap align-items-center order-1 order-md-2">
+                  <div class="contact-info-list">
+                     <ul class="ul-reset">
+                        <li class="d-flex flex-wrap align-items-center position-relative wow fadeInRight" data-wow-delay=".4s">
+                           <div class="icon-box">
+                              <i class="flaticon-phone-call"></i>
+                           </div>
+                           <div class="text-box">
+                              <p>Phone</p>
+                              <a href="tel:0123456789">+91 9816748226</a>
+                           </div>
+                        </li>
+                        <li class="d-flex flex-wrap align-items-center position-relative wow fadeInRight" data-wow-delay=".5s">
+                           <div class="icon-box">
+                              <i class="flaticon-mail-inbox-app"></i>
+                           </div>
+                           <div class="text-box">
+                              <p>Email</p>
+                              <a href="mailto:mail@gmail.com">kartiksoni48226@gmail.com</a>
+                           </div>
+                        </li>
+                        <li class="d-flex flex-wrap align-items-center position-relative wow fadeInRight" data-wow-delay=".6s">
+                           <div class="icon-box">
+                              <i class="flaticon-location"></i>
+                           </div>
+                           <div class="text-box">
+                              <p>Address</p>
+                              <a href="https://maps.app.goo.gl/fVVJwQurLQ13xbta6">Mandi, Himachal Pradesh</a>
+                           </div>
+                        </li>
+                        <li class="d-flex flex-wrap align-items-center position-relative wow fadeInRight" data-wow-delay=".7s">
+                           <div class="icon-box">
+                              <i class="fa-brands fa-whatsapp"></i>
+                           </div>
+                           <div class="text-box">
+                              <a class="whatsapp-cta" href="https://wa.me/919816748226?text=Hi%20Kartik,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">
+                                 <span>Chat on WhatsApp</span>
+                              </a>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- CONTACT SECTION END -->
+
+      <!-- BEGIN: Contact Form Success Modal Message -->
+      <div class="modal contact_modal" id="message_sent" tabindex="-1">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <span class="modal-title"><strong>Message Sent Successfully</strong></span>
+                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+               </div>
+               <div class="modal-body">
+                  <p>Thank you for contacting us. We will get back to you shortly.<br>Have a great day!</p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END: Contact Form Success Modal Message -->
+
+      <!-- BEGIN: Contact Form Fail Modal Message -->
+      <div class="modal contact_modal failed" id="message_fail" tabindex="-1">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <span class="modal-title"><strong>Error</strong></span>
+                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+               </div>
+               <div class="modal-body">
+                  <p>Oops! Something went wrong, please try again.</p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END: Contact Form Fail Modal Message End -->
+   </main>
+
+   <!-- FOOTER AREA START -->
+   <footer class="tj-footer-area footer-rich">
+      <div class="container">
+         <div class="footer-rich-inner">
+            <div class="row gy-5">
+               <div class="col-lg-3 col-md-6">
+                  <div class="footer-widget">
+                     <div class="footer-brand">
+                        <div class="footer-logo-box">
+                           <a href="#intro"><img src="assets/img/logo/logo.png" alt="Kartik Soni logo"></a>
+                        </div>
+                        <h3 class="footer-widget-title">Kartik Soni</h3>
+                     </div>
+                     <p class="footer-brand-copy">Turning ideas into focused work that leaves a lasting impression.</p>
+                     <ul class="footer-social">
+                        <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="https://x.com/kartiksoni2605" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/__kartiksoni__/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/kartik-soni-596b31291" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a href="https://github.com/kartiksoni543" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="footer-widget">
+                     <h3 class="footer-widget-title">Links</h3>
+                     <ul class="footer-links">
+		                        <li><a href="#services-section">Services</a></li>
+		                        <li><a href="#works-section">Works</a></li>
+		                        <li><a href="#resume-section">Resume</a></li>
+		                        <li><a href="#skills-section">Skills</a></li>
+		                        <li><a href="#testimonials-section">Testimonials</a></li>
+		                        <li><a href="#contact-section">Contact</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="footer-widget">
+                     <h3 class="footer-widget-title">Services</h3>
+                     <ul class="footer-service-list">
+		                        <li><a href="#services-section">Web Design</a></li>
+		                        <li><a href="#services-section">Web Development</a></li>
+		                        <li><a href="#services-section">Business Strategy</a></li>
+		                        <li><a href="#services-section">Data Analysis</a></li>
+		                        <li><a href="#services-section">Graphic Design</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="footer-widget">
+                     <h3 class="footer-widget-title">Have a Questions?</h3>
+                     <ul class="footer-contact-list">
+                        <li>
+                           <i class="fa-solid fa-location-dot"></i>
+                           <span>Mandi(HP),India</span>
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-phone"></i>
+                           <a href="tel:+919816748226">+91 9816748226</a>
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-envelope"></i>
+                           <a href="mailto:Kartiksoni48226@gmail.com">Kartiksoni48226@gmail.com</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!-- FOOTER AREA END -->
+
+   <!-- CSS here -->
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/nice-select.min.js"></script>
+   <script src="assets/js/backToTop.js"></script>
+   <script src="assets/js/smooth-scroll.js"></script>
+   <script src="assets/js/appear.min.js"></script>
+   <script src="assets/js/wow.min.js"></script>
+   <script src="assets/js/gsap.min.js"></script>
+   <script src="assets/js/one-page-nav.js"></script>
+   <script src="assets/js/lightcase.js"></script>
+   <script src="assets/js/owl.carousel.min.js"></script>
+   <script src="assets/js/swiper.min.js"></script>
+   <script src="assets/js/imagesloaded-pkgd.js"></script>
+   <script src="assets/js/isotope.pkgd.min.js"></script>
+   <script>
+      window.odometerOptions = {
+         duration: 7000
+      };
+   </script>
+   <script src="assets/js/odometer.min.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/validate.min.js"></script>
+   <script src="assets/js/main.js"></script>
+   <script>
+      (function () {
+         var counters = document.querySelectorAll(".odometer[data-count]");
+
+         if (!counters.length) {
+            return;
+         }
+
+         var started = false;
+
+         function runCounters() {
+            if (started) {
+               return;
+            }
+
+            started = true;
+            counters.forEach(function (counter) {
+               var value = counter.getAttribute("data-count") || "0";
+               counter.innerHTML = value;
+            });
+         }
+
+         if ("IntersectionObserver" in window) {
+            var observer = new IntersectionObserver(function (entries) {
+               entries.forEach(function (entry) {
+                  if (entry.isIntersecting) {
+                     runCounters();
+                     observer.disconnect();
+                  }
+               });
+            }, { threshold: 0.3 });
+
+            counters.forEach(function (counter) {
+               observer.observe(counter);
+            });
+         } else {
+            window.addEventListener("load", function () {
+               setTimeout(runCounters, 200);
+            });
+         }
+      }());
+   </script>
+    <script>
+        window.addEventListener("load", function () {
+            document.body.classList.add("loaded");
+
+            const revealTargets = document.querySelectorAll(
+                ".hero-content-box, .service-item, .portfolio-section .section-header, .testimonial-section .section-header, .testimonial-item, .contact-section"
+            );
+
+            revealTargets.forEach((element) => {
+                element.classList.add("reveal");
+            });
+
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                revealTargets.forEach((element) => element.classList.add("active"));
+                return;
+            }
+
+            const revealObserver = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target);
+                    });
+                },
+                {
+                    threshold: 0.15,
+                    rootMargin: "0px 0px -40px 0px",
+                }
+            );
+
+            revealTargets.forEach((element) => {
+                revealObserver.observe(element);
+            });
+
+            document.querySelectorAll(".portfolio-section .portfolio-item, .portfolio-section .portfolio-box, .portfolio-section .portfolio-wrapper").forEach((element) => {
+                element.classList.remove("reveal", "active");
+                element.style.opacity = "1";
+                element.style.visibility = "visible";
+                element.style.transform = "none";
+            });
+
+        });
+	    </script>
+	    <script>
+	        window.addEventListener("load", function () {
+	            const skillCards = document.querySelectorAll(".skills-section .skill-item");
+
+	            skillCards.forEach((card) => {
+	                const icon = card.querySelector(".icon-box");
+	                if (!icon) {
+	                    return;
+	                }
+
+	                card.classList.add("skill-card");
+	                icon.classList.add("skill-icon");
+
+	                card.addEventListener("mousemove", (event) => {
+	                    const rect = card.getBoundingClientRect();
+	                    const offsetX = event.clientX - rect.left - rect.width / 2;
+	                    const offsetY = event.clientY - rect.top - rect.height / 2;
+	                    const rotateY = offsetX / 14;
+	                    const rotateX = -offsetY / 14;
+
+	                    icon.style.transform =
+	                        "translate3d(0, -2px, 0) rotateX(" +
+	                        rotateX +
+	                        "deg) rotateY(" +
+	                        rotateY +
+	                        "deg)";
+	                });
+
+	                card.addEventListener("mouseleave", () => {
+	                    icon.style.transform = "translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg)";
+	                });
+	            });
+	        });
+	    </script>
+	    <script>
+	        window.addEventListener("load", function () {
+	            const trigger = document.getElementById("hero-calendly-trigger");
+	            const modal = document.getElementById("hero-calendly-modal");
+	            const closeButton = document.getElementById("hero-calendly-close");
+	            const dialog = modal ? modal.querySelector(".hero-calendly-modal__dialog") : null;
+
+	            if (!trigger || !modal || !dialog || !closeButton) {
+	                return;
+	            }
+
+	            function openModal(event) {
+	                event.preventDefault();
+	                modal.classList.add("is-open");
+	                modal.setAttribute("aria-hidden", "false");
+	                trigger.setAttribute("aria-expanded", "true");
+	                document.body.style.overflow = "hidden";
+	            }
+
+	            function closeModal() {
+	                modal.classList.remove("is-open");
+	                modal.setAttribute("aria-hidden", "true");
+	                trigger.setAttribute("aria-expanded", "false");
+	                document.body.style.overflow = "";
+	            }
+
+	            trigger.addEventListener("click", openModal);
+	            closeButton.addEventListener("click", closeModal);
+
+	            modal.addEventListener("click", function (event) {
+	                if (event.target === modal) {
+	                    closeModal();
+	                }
+	            });
+
+	            document.addEventListener("keydown", function (event) {
+	                if (event.key === "Escape" && modal.classList.contains("is-open")) {
+	                    closeModal();
+	                }
+	            });
+
+	            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+	                trigger.addEventListener("mousemove", function (event) {
+	                    const rect = trigger.getBoundingClientRect();
+	                    const x = event.clientX - rect.left - rect.width / 2;
+	                    const y = event.clientY - rect.top - rect.height / 2;
+	                    trigger.style.transform =
+	                        "translate(" + x / 12 + "px, " + y / 12 + "px)";
+	                });
+
+	                trigger.addEventListener("mouseleave", function () {
+	                    trigger.style.transform = "";
+	                });
+	            }
+	        });
+	    </script>
+	</body>
+
+</html>
