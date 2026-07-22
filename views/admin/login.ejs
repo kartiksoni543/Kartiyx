@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - Kartik Soni CMS</title>
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <style>
+    body {
+      background: #0f0715;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .login-card {
+      background: #190e2b;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: 20px;
+      padding: 40px;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+    .btn-purple {
+      background: linear-gradient(135deg, #7b2ff7 0%, #a855f7 100%);
+      border: none;
+      color: #fff;
+      font-weight: 600;
+    }
+    .btn-purple:hover {
+      background: linear-gradient(135deg, #6b21e8 0%, #9333ea 100%);
+      color: #fff;
+    }
+    .text-purple { color: #c084fc; }
+  </style>
+</head>
+<body>
+
+<div class="login-card">
+  <div class="text-center mb-4">
+    <h2 class="text-purple font-bold">Admin Portal</h2>
+    <p class="text-white-50 small">Sign in to manage portfolio & CMS</p>
+  </div>
+
+  <div id="login-alert" class="alert alert-danger" style="display: none;"></div>
+
+  <form id="admin-login-form">
+    <div class="mb-3">
+      <label class="form-label text-purple small">Username or Email</label>
+      <input type="text" name="username" class="form-control bg-dark text-white border-secondary" required placeholder="admin">
+    </div>
+    <div class="mb-4">
+      <label class="form-label text-purple small">Password</label>
+      <input type="password" name="password" class="form-control bg-dark text-white border-secondary" required placeholder="••••••••">
+    </div>
+    <button type="submit" class="btn btn-purple w-100 py-2" id="login-btn">Sign In</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById('admin-login-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const alertBox = document.getElementById('login-alert');
+    const loginBtn = document.getElementById('login-btn');
+    alertBox.style.display = 'none';
+    loginBtn.disabled = true;
+    loginBtn.innerText = 'Authenticating...';
+
+    try {
+      const res = await fetch('/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: this.username.value,
+          password: this.password.value
+        })
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        window.location.href = '/admin/dashboard';
+      } else {
+        alertBox.style.display = 'block';
+        alertBox.innerText = data.message || 'Invalid credentials';
+      }
+    } catch (err) {
+      alertBox.style.display = 'block';
+      alertBox.innerText = 'Server connection error';
+    } finally {
+      loginBtn.disabled = false;
+      loginBtn.innerText = 'Sign In';
+    }
+  });
+</script>
+
+</body>
+</html>

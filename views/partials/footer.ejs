@@ -1,0 +1,118 @@
+   <!-- FOOTER AREA START -->
+   <footer class="tj-footer-area">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 text-center">
+               <div class="footer-logo-box">
+                  <a href="/">
+                     <img src="/assets/img/logo/logo.png" alt="Kartik Soni Logo">
+                  </a>
+               </div>
+               <div class="footer-menu">
+                  <nav>
+                     <ul>
+                        <li><a href="/#services-section">Services</a></li>
+                        <li><a href="/#works-section">Works</a></li>
+                        <li><a href="/#resume-section">Resume</a></li>
+                        <li><a href="/#skills-section">Skills</a></li>
+                        <li><a href="/#testimonials-section">Testimonials</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/#contact-section">Contact</a></li>
+                     </ul>
+                  </nav>
+               </div>
+               <div class="copy-text">
+                  <p>&copy; <%= new Date().getFullYear() %> <a href="/" target="_blank">Kartik Soni</a>. All rights reserved.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!-- FOOTER AREA END -->
+
+   <!-- JS Scripts -->
+   <script src="/assets/js/jquery.min.js"></script>
+   <script src="/assets/js/bootstrap.bundle.min.js"></script>
+   <script src="/assets/js/nice-select.min.js"></script>
+   <script src="/assets/js/backToTop.js"></script>
+   <script src="/assets/js/smooth-scroll.js"></script>
+   <script src="/assets/js/appear.min.js"></script>
+   <script src="/assets/js/wow.min.js"></script>
+   <script src="/assets/js/gsap.min.js"></script>
+   <script src="/assets/js/one-page-nav.js"></script>
+   <script src="/assets/js/lightcase.js"></script>
+   <script src="/assets/js/owl.carousel.min.js"></script>
+   <script src="/assets/js/swiper.min.js"></script>
+   <script src="/assets/js/imagesloaded-pkgd.js"></script>
+   <script src="/assets/js/isotope.pkgd.min.js"></script>
+   <script>
+      window.odometerOptions = {
+         duration: 7000
+      };
+   </script>
+   <script src="/assets/js/odometer.min.js"></script>
+   <script src="/assets/js/magnific-popup.js"></script>
+   <script src="/assets/js/validate.min.js"></script>
+   <script src="/assets/js/main.js"></script>
+   <script>
+      (function () {
+         var counters = document.querySelectorAll(".odometer[data-count]");
+         if (!counters.length) return;
+         var started = false;
+         function runCounters() {
+            if (started) return;
+            started = true;
+            counters.forEach(function (counter) {
+               var value = counter.getAttribute("data-count") || "0";
+               counter.innerHTML = value;
+            });
+         }
+         if ("IntersectionObserver" in window) {
+            var observer = new IntersectionObserver(function (entries) {
+               entries.forEach(function (entry) {
+                  if (entry.isIntersecting) {
+                     runCounters();
+                     observer.disconnect();
+                  }
+               });
+            }, { threshold: 0.3 });
+            counters.forEach(function (counter) {
+               observer.observe(counter);
+            });
+         } else {
+            window.addEventListener("load", function () {
+               setTimeout(runCounters, 200);
+            });
+         }
+      }());
+   </script>
+   <script>
+       window.addEventListener("load", function () {
+           document.body.classList.add("loaded");
+           const revealTargets = document.querySelectorAll(
+               ".hero-content-box, .service-item, .portfolio-section .section-header, .testimonial-section .section-header, .testimonial-item, .contact-section"
+           );
+           revealTargets.forEach((element) => {
+               element.classList.add("reveal");
+           });
+           if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+               revealTargets.forEach((element) => element.classList.add("active"));
+               return;
+           }
+           const revealObserver = new IntersectionObserver(
+               (entries, observer) => {
+                   entries.forEach((entry) => {
+                       if (!entry.isIntersecting) return;
+                       entry.target.classList.add("active");
+                       observer.unobserve(entry.target);
+                   });
+               },
+               { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+           );
+           revealTargets.forEach((element) => {
+               revealObserver.observe(element);
+           });
+       });
+   </script>
+</body>
+</html>

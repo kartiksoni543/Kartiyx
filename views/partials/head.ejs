@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <!-- SEO Meta Tags -->
+   <title><%= typeof pageTitle !== 'undefined' ? pageTitle + ' - ' + (settings.siteName || 'Kartik Soni') : (settings.metaTitle || 'Kartik Soni - Personal Portfolio') %></title>
+   <meta name="description" content="<%= typeof blog !== 'undefined' && blog.excerpt ? blog.excerpt : (settings.metaDescription || 'Personal Portfolio & Blog of Kartik Soni, Senior Full Stack Node.js & React Developer.') %>">
+   <meta name="keywords" content="<%= settings.keywords || 'Kartik Soni, Portfolio, Node.js Developer, Web Development, Full Stack' %>">
+   <meta name="author" content="Kartik Soni">
+   <link rel="canonical" href="<%= typeof currentPath !== 'undefined' ? (process.env.SITE_URL || 'https://kartiksoni.gt.tc') + currentPath : (process.env.SITE_URL || 'https://kartiksoni.gt.tc') %>" />
+
+   <!-- OpenGraph Meta Tags -->
+   <meta property="og:type" content="<%= typeof blog !== 'undefined' ? 'article' : 'website' %>" />
+   <meta property="og:title" content="<%= typeof pageTitle !== 'undefined' ? pageTitle : (settings.metaTitle || 'Kartik Soni - Personal Portfolio') %>" />
+   <meta property="og:description" content="<%= typeof blog !== 'undefined' && blog.excerpt ? blog.excerpt : (settings.metaDescription || 'Personal Portfolio of Kartik Soni') %>" />
+   <meta property="og:image" content="<%= typeof blog !== 'undefined' && blog.featuredImage ? (blog.featuredImage.startsWith('http') ? blog.featuredImage : (process.env.SITE_URL || 'https://kartiksoni.gt.tc') + '/' + blog.featuredImage.replace(/^\//, '')) : '/assets/img/favicon.png' %>" />
+   <meta property="og:url" content="<%= typeof currentPath !== 'undefined' ? (process.env.SITE_URL || 'https://kartiksoni.gt.tc') + currentPath : (process.env.SITE_URL || 'https://kartiksoni.gt.tc') %>" />
+   <meta property="og:site_name" content="<%= settings.siteName || 'Kartik Soni Portfolio' %>" />
+
+   <!-- Twitter Card Meta Tags -->
+   <meta name="twitter:card" content="summary_large_image" />
+   <meta name="twitter:title" content="<%= typeof pageTitle !== 'undefined' ? pageTitle : settings.metaTitle %>" />
+   <meta name="twitter:description" content="<%= typeof blog !== 'undefined' && blog.excerpt ? blog.excerpt : settings.metaDescription %>" />
+   <meta name="twitter:image" content="<%= typeof blog !== 'undefined' && blog.featuredImage ? blog.featuredImage : '/assets/img/favicon.png' %>" />
+
+   <!-- Favicon -->
+   <link rel="apple-touch-icon" href="/assets/img/favicon.png">
+   <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png">
+
+   <!-- CSS links -->
+   <link rel="stylesheet" href="/assets/css/animate.min.css">
+   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="/assets/css/font-awesome-pro.min.css">
+   <link rel="stylesheet" href="/assets/css/flaticon_gerold.css">
+   <link rel="stylesheet" href="/assets/css/nice-select.css">
+   <link rel="stylesheet" href="/assets/css/backToTop.css">
+   <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="/assets/css/swiper.min.css">
+   <link rel="stylesheet" href="/assets/css/odometer-theme-default.css">
+   <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="/assets/css/main.css">
+   <link rel="stylesheet" href="/assets/css/light-mode.css">
+   <link rel="stylesheet" href="/assets/css/responsive.css">
+
+   <!-- Structured Data JSON-LD -->
+   <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": "Person",
+     "name": "Kartik Soni",
+     "url": "<%= process.env.SITE_URL || 'https://kartiksoni.gt.tc' %>",
+     "jobTitle": "Senior Full Stack Engineer & UI/UX Architect",
+     "sameAs": [
+       "https://github.com",
+       "https://linkedin.com"
+     ]
+   }
+   </script>
+</head>
+<body>

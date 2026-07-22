@@ -1,0 +1,53 @@
+{
+  "name": "kartik-awwwards-portfolio",
+  "version": "1.0.0",
+  "description": "Awwwards-Level 3D Developer Portfolio for Kartik Soni",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "express": "node server.js"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.100.0",
+    "@react-three/fiber": "^8.16.0",
+    "@studio-freight/lenis": "^1.0.42",
+    "bcryptjs": "^3.0.3",
+    "clsx": "^2.1.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^8.6.0",
+    "express-session": "^1.18.1",
+    "express-validator": "^7.3.2",
+    "framer-motion": "^12.42.2",
+    "gsap": "^3.15.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "lucide-react": "^1.25.0",
+    "mongoose": "^8.24.1",
+    "morgan": "^1.11.0",
+    "multer": "^2.2.0",
+    "next": "^14.2.5",
+    "nodemailer": "^9.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "slugify": "^1.6.9",
+    "tailwind-merge": "^3.6.0",
+    "three": "^0.185.1",
+    "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/three": "^0.165.0",
+    "autoprefixer": "^10.5.4",
+    "postcss": "^8.5.21",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.5.3"
+  }
+}

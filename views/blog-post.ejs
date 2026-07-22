@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+	<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="">
+
+   <!-- Site Title -->
+   <title><%= postTitle %> - Kartik Soni Portfolio</title>
+
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="apple-touch-icon" href="assets/img/favicon.png">
+   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="assets/css/animate.min.css">
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.min.css">
+   <link rel="stylesheet" href="assets/css/flaticon_gerold.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/backToTop.css">
+   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="assets/css/swiper.min.css">
+   <link rel="stylesheet" href="assets/css/odometer-theme-default.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+   <link rel="stylesheet" href="assets/css/light-mode.css">
+	   <link rel="stylesheet" href="assets/css/responsive.css">
+      <style>
+         .admin-indicator {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 999;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #14532d, #22c55e);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+         }
+
+         .comment__avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6f42ff, #9d6bff);
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            overflow: hidden;
+         }
+
+         .comment__avatar img {
+            display: none;
+         }
+      </style>
+	</head>
+
+	<body class="absolute_header">
+      <% if (isAdmin) { %>
+         <div class="admin-indicator">Admin mode active</div>
+      <% } %>
+
+	   <!-- Preloader Area Start -->
+   <div class="preloader">
+      <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
+         <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+      </svg>
+
+      <div class="preloader-heading">
+         <div class="load-text">
+            <span>L</span>
+            <span>o</span>
+            <span>a</span>
+            <span>d</span>
+            <span>i</span>
+            <span>n</span>
+            <span>g</span>
+         </div>
+      </div>
+   </div>
+   <!-- Preloader Area End -->
+
+   <!-- start: Back To Top -->
+   <div class="progress-wrap" id="scrollUp">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+      </svg>
+   </div>
+   <!-- end: Back To Top -->
+
+   <!-- HEADER START -->
+   <header class="tj-header-area header-absolute">
+      <div class="container">
+         <div class="row">
+            <div class="col-12 d-flex flex-wrap align-items-center">
+               <div class="logo-box">
+                  <a href="index.html">
+                     <img src="assets/img/logo/logo.png" alt="">
+                  </a>
+               </div>
+
+               <div class="header-info-list d-none d-md-inline-block">
+                  <ul class="ul-reset">
+                     <li><a href="mailto:Kartiksoni48226@gmail.com">Kartiksoni48226@gmail.com</a></li>
+                  </ul>
+               </div>
+
+               <div class="header-menu">
+                  <nav>
+                     <ul>
+                        <li><a href="index.html#services-section">Services</a></li>
+                        <li><a href="index.html#works-section">Works</a></li>
+                        <li><a href="index.html#resume-section">Resume</a></li>
+                        <li><a href="index.html#skills-section">Skills</a></li>
+                        <li><a href="index.html#testimonials-section">Testimonials</a></li>
+                        <li><a href="index.html#contact-section">Contact</a></li>
+                     </ul>
+                  </nav>
+               </div>
+
+               <div class="header-button">
+                  <a href="https://wa.me/919816748226?text=Hi%20I%20want%20a%20website%20for%20my%20business" target="_blank" class="btn tj-btn-primary">Hire me!</a>
+               </div>
+
+               <div class="menu-bar d-lg-none">
+                  <button>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <header class="tj-header-area header-2 header-sticky sticky-out">
+      <div class="container">
+         <div class="row">
+            <div class="col-12 d-flex flex-wrap align-items-center">
+               <div class="logo-box">
+                  <a href="index.html">
+                     <img src="assets/img/logo/logo.png" alt="">
+                  </a>
+               </div>
+
+               <div class="header-info-list d-none d-md-inline-block">
+                  <ul class="ul-reset">
+                     <li><a href="mailto:Kartiksoni48226@gmail.com">Kartiksoni48226@gmail.com</a></li>
+                  </ul>
+               </div>
+
+               <div class="header-menu">
+                  <nav>
+                     <ul>
+                        <li><a href="index.html#services-section">Services</a></li>
+                        <li><a href="index.html#works-section">Works</a></li>
+                        <li><a href="index.html#resume-section">Resume</a></li>
+                        <li><a href="index.html#skills-section">Skills</a></li>
+                        <li><a href="index.html#testimonials-section">Testimonials</a></li>
+                        <li><a href="index.html#contact-section">Contact</a></li>
+                     </ul>
+                  </nav>
+               </div>
+
+               <div class="header-button">
+                  <a href="https://wa.me/919816748226?text=Hi%20I%20want%20a%20website%20for%20my%20business" target="_blank" class="btn tj-btn-primary">Hire me!</a>
+               </div>
+
+               <div class="menu-bar d-lg-none">
+                  <button>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <!-- HEADER END -->
+
+   <main class="site-content" id="content">
+      <!-- START: Breadcrumb Area -->
+      <section class="breadcrumb_area" data-bg-image="./assets/img/hero/hero-background.png" data-bg-color="#140C1C">
+         <div class="container">
+            <div class="row">
+               <div class="col">
+                  <div class="breadcrumb_content d-flex flex-column align-items-center">
+                     <h2 class="title wow fadeInUp" data-wow-delay=".3s"><%= postTitle %></h2>
+                     <div class="breadcrumb_navigation wow fadeInUp" data-wow-delay=".5s">
+                        <span><a href="index.html">Home</a></span>
+                        <i class="far fa-long-arrow-right"></i>
+                        <span class="current-item"><%= postTitle %></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- END: Breadcrumb Area -->
+
+      <!-- START: Blog Section -->
+      <section class="full-width tj-post-details__area">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-lg-8">
+                  <div class="tj-post-details__container">
+                     <article class="tj-single__post">
+                        <div class="tj-post__thumb">
+                           <img src="<%= postThumb %>" alt="">
+
+                           <a href="#" class="category"><%= postCategory %></a>
+                        </div>
+
+                        <div class="tj-post__content">
+                           <div class="tj-post__meta entry-meta">
+                              <span><i class="fa-light fa-user"></i> <a href="#">By Admin</a></span>
+                              <span><i class="fa-light fa-calendar-days"></i> <%= postDate %></span>
+                              <span><i class="fa-light fa-comments"></i><a href="#comments">Comments (<%= comments.length %>)</a></span>
+                           </div>
+                           <h3 class="tj-post__title entry-title"><%= postTitle %></h3>
+
+                           <div class="tj-post__content">
+                              <%- postBody %>
+                           </div>
+                        </div>
+                     </article>
+
+                     <!-- post tags & social share -->
+                     <div class="single-post_tag_share">
+                        <!-- post tags -->
+                        <div class="tj_tag">
+                           <h4 class="tag__title">Tags:</h4>
+                           <div class="tagcloud">
+                              <a href="#" rel="tag">Business</a>
+                              <a href="#" rel="tag">Analysis</a>
+                              <a href="#" rel="tag">Technology</a>
+                              <a href="#" rel="tag">Design</a>
+                              <a href="#" rel="tag">Strategy</a>
+                              <a href="#" rel="tag">Tips</a>
+                           </div>
+                        </div>
+                        <div class="share_link">
+                           <a href="#" target="_blank" class="facebook" title="Share this on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                           <a href="#" class="twitter" title="Share this on Twitter" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                           <a href="#" class="linkedin" title="Share this on Linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                           <a href="#" class="pinterest" title="Pin this Post" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+                        </div>
+                     </div>
+
+                     <!-- post navigation -->
+                     <div class="single-post__navigation">
+                        <!-- previous post -->
+                        <div class="tj-navigation_post previous">
+                           <div class="tj-navigation-post_inner prev_post">
+                              <div class="navigation-post_img">
+                                 <a href="<%= previousPost.file %>"> <img src="<%= previousPost.image %>" alt=""> </a>
+                              </div>
+                              <div class="tj-content">
+                                 <div class="post_pagination_nav"><i class="fa-regular fa-angle-double-left"></i>previous</div>
+                                 <div class="post_pagination_title">
+                                    <h5 class="title">
+                                       <a href="<%= previousPost.file %>"><%= previousPost.title %></a>
+                                    </h5>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                        <!-- next post -->
+                        <div class="tj-navigation_post next">
+                           <div class="tj-navigation-post_inner next_post">
+                              <div class="tj-content">
+                                 <div class="post_pagination_nav">Next<i class="fa-regular fa-angle-double-right"></i>
+                                 </div>
+                                 <div class="post_pagination_title">
+                                    <h5 class="title">
+                                       <a href="<%= nextPost.file %>"><%= nextPost.title %></a>
+                                    </h5>
+                                 </div>
+                              </div>
+                              <div class="navigation-post_img">
+                                 <a href="<%= nextPost.file %>"> <img src="<%= nextPost.image %>" alt=""> </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- comments area -->
+                     <div class="tj-comments__container" id="comments">
+                        <div class="tj-comments__wrap">
+                           <div class="tj-comment__title">
+                              <h3><%= comments.length %> Comment<%= comments.length === 1 ? '' : 's' %></h3>
+                           </div>
+
+                           <div class="tj-latest__comments">
+                              <% if (commentStatus) { %>
+                                 <p style="color:#22c55e; margin-bottom: 20px;"><%= commentStatus %></p>
+                              <% } %>
+                              <% if (commentError) { %>
+                                 <p style="color:#ef4444; margin-bottom: 20px;"><%= commentError %></p>
+                              <% } %>
+                              <ul>
+                                 <% if (comments.length === 0) { %>
+                                    <li class="tj__comment">
+                                       <div class="tj-comment__wrap">
+                                          <div class="comment__text">
+                                             <div class="avatar__name">
+                                                <h5><a href="javascript:void(0)">No comments yet</a></h5>
+                                                <span>Be the first to comment on this post.</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </li>
+                                 <% } else { %>
+                                    <% comments.forEach(function(commentItem) { %>
+                                       <li class="tj__comment">
+                                          <div class="tj-comment__wrap">
+                                             <div class="comment__avatar">
+                                                <span><%= commentInitials(commentItem.author) %></span>
+                                             </div>
+                                             <div class="comment__text">
+                                                <div class="avatar__name">
+                                                   <h5><a href="<%= commentItem.website || '#' %>"><%= commentItem.author %></a></h5>
+                                                   <span><%= new Date(commentItem.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) %></span>
+                                                </div>
+                                                <p><%- commentItem.comment.replace(/\n/g, '<br>') %></p>
+                                                <div class="comment__reply" style="display:flex; gap:12px; align-items:center;">
+                                                   <a class="comment-reply-link" href="#comment">Reply</a>
+                                                   <% if (isAdmin) { %>
+                                                      <form action="<%= postFile %>" method="post" onsubmit="return confirm('Delete this comment?');" style="margin:0;">
+                                                         <input type="hidden" name="delete_comment_id" value="<%= commentItem.id %>">
+                                                         <button type="submit" style="border:0; background:none; color:#ff6b6b; padding:0; cursor:pointer;">Delete</button>
+                                                      </form>
+                                                   <% } %>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </li>
+                                    <% }); %>
+                                 <% } %>
+                              </ul>
+                           </div>
+                        </div>
+
+                        <div class="comment-respond">
+                           <h3 class="comment-reply-title">
+                              <span class="tj-comment__title">Leave a Reply</span>
+                           </h3>
+
+                           <form action="<%= postFile %>" method="post" class="tj-post-comment__form">
+                              <p class="comment-notes">
+                                 <span id="email-notes">Your email address will not be published.</span>
+                                 <span class="required-field-message">Required fields are marked <span class="required">*</span></span>
+                              </p>
+
+                              <div class="row">
+                                 <div class="col-md-6">
+                                    <div class="form_group">
+                                       <input placeholder="Enter Name" id="author" name="author" type="text" aria-required="true" value="<%= commentForm.author || '' %>">
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                    <div class="form_group">
+                                       <input placeholder="Enter Email" id="email" name="email" type="email" aria-required="true" value="<%= commentForm.email || '' %>">
+                                    </div>
+                                 </div>
+                                 <div class="col-md-12">
+                                    <div class="form_group">
+                                       <input placeholder="Enter Website" id="url" name="url" type="url" value="<%= commentForm.url || '' %>">
+                                    </div>
+                                 </div>
+                              </div>
+
+                              <div class="row">
+                                 <div class="col-md-12">
+                                    <div class="form_group">
+                                       <textarea class="msg-box" placeholder="Enter Your Comments" id="comment" name="comment" cols="45" rows="8"><%= commentForm.comment || '' %></textarea>
+                                    </div>
+                                 </div>
+                                 <div class="clearfix"></div>
+                              </div>
+
+                              <p class="comment-form-cookies-consent">
+                                 <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes">
+                                 <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label>
+                              </p>
+                              <button class="tj-btn-primary submit" type="submit">Post Comment</button>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4">
+                  <div class="tj_main_sidebar">
+                     <div class="sidebar_widget widget_search wow fadeInUp" data-wow-delay=".3s">
+                        <div class="tj-widget__search form_group">
+                           <form class="search-form" action="#" method="get">
+                              <input type="search" id="search" name="search" placeholder="Search...">
+                              <button class="search-btn" type="submit"><i class="fa-light fa-magnifying-glass"></i></button>
+                           </form>
+                        </div>
+                     </div>
+
+                     <div class="sidebar_widget widget_categories wow fadeInUp" data-wow-delay=".3s">
+                        <div class="widget_title">
+                           <h3 class="title">Categories</h3>
+                        </div>
+
+                        <ul>
+                           <li><a href="#">Business</a> (4)</li>
+                           <li><a href="#">Analysis</a> (0)</li>
+                           <li><a href="#">Technology</a> (1)</li>
+                           <li><a href="#">Technology</a> (10)</li>
+                        </ul>
+                     </div>
+
+                     <div class="sidebar_widget tj_recent_posts wow fadeInUp" data-wow-delay=".3s">
+                        <div class="widget_title">
+                           <h3 class="title">Recent post</h3>
+                        </div>
+
+                        <ul>
+                           <li>
+                              <div class="recent-post_thumb">
+                                 <a href="blog-details.php">
+                                    <img src="assets/img/blog/post-thumb-1.jpg" alt="">
+                                 </a>
+                              </div>
+
+                              <div class="recent-post_content">
+                                 <div class="tj-post__meta entry-meta">
+                                    <span><i class="fa-light fa-calendar-days"></i>Jan 2024</span>
+                                    <span><i class="fa-light fa-comments"></i><a href="#"> (3)</a></span>
+                                 </div>
+                                 <h4 class="recent-post_title">
+                                    <a href="blog-details.php">Top 10 UI/UX Designers To Follow For Better Product Thinking</a>
+                                 </h4>
+                              </div>
+                           </li>
+                           <li>
+                              <div class="recent-post_thumb">
+                                 <a href="blog-app-development.php">
+                                    <img src="assets/img/blog/post-thumb-2.jpg" alt="">
+                                 </a>
+                              </div>
+
+                              <div class="recent-post_content">
+                                 <div class="tj-post__meta entry-meta">
+                                    <span><i class="fa-light fa-calendar-days"></i>Jan 2024</span>
+                                    <span><i class="fa-light fa-comments"></i><a href="#"> (3)</a></span>
+                                 </div>
+                                 <h4 class="recent-post_title">
+                                    <a href="blog-app-development.php">App Development Guides For Teams Building Better Products</a>
+                                 </h4>
+                              </div>
+                           </li>
+                           <li>
+                              <div class="recent-post_thumb">
+                                 <a href="blog-graphic-design.php">
+                                    <img src="assets/img/blog/post-thumb-3.jpg" alt="">
+                                 </a>
+                              </div>
+
+                              <div class="recent-post_content">
+                                 <div class="tj-post__meta entry-meta">
+                                    <span><i class="fa-light fa-calendar-days"></i>Jan 2024</span>
+                                    <span><i class="fa-light fa-comments"></i><a href="#"> (3)</a></span>
+                                 </div>
+                                 <h4 class="recent-post_title">
+                                    <a href="blog-graphic-design.php">Learn Graphic Design Free With Smarter Practice Habits</a>
+                                 </h4>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+
+                     <div class="sidebar_widget widget_tag_cloud wow fadeInUp" data-wow-delay=".3s">
+                        <div class="widget_title">
+                           <h3 class="title">Popular tag</h3>
+                        </div>
+
+                        <div class="tagcloud">
+                           <a href="#">Business</a>
+                           <a href="#">Analysis</a>
+                           <a href="#">Technology</a>
+                           <a href="#">Finance</a>
+                           <a href="#">Design</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- END: Blog Section -->
+   </main>
+
+   <!-- FOOTER AREA START -->
+   <footer class="tj-footer-area footer-rich">
+      <div class="container">
+         <div class="footer-rich-inner">
+            <div class="row gy-5">
+               <div class="col-lg-3 col-md-6">
+                  <div class="footer-widget">
+                     <div class="footer-brand">
+                        <div class="footer-logo-box">
+                           <a href="index.html"><img src="assets/img/logo/logo.png" alt="Kartik Soni logo"></a>
+                        </div>
+                        <h3 class="footer-widget-title">Kartik Soni</h3>
+                     </div>
+                     <p class="footer-brand-copy">Turning ideas into focused work that leaves a lasting impression.</p>
+                     <ul class="footer-social">
+                        <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="https://x.com/kartiksoni2605" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/__kartiksoni__/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/kartik-soni-596b31291" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a href="https://github.com/kartiksoni543" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="footer-widget">
+                     <h3 class="footer-widget-title">Links</h3>
+                     <ul class="footer-links">
+                        <li><a href="index.html#services-section">Services</a></li>
+                        <li><a href="index.html#works-section">Works</a></li>
+                        <li><a href="index.html#resume-section">Resume</a></li>
+                        <li><a href="index.html#skills-section">Skills</a></li>
+                        <li><a href="index.html#testimonials-section">Testimonials</a></li>
+                        <li><a href="index.html#contact-section">Contact</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="footer-widget">
+                     <h3 class="footer-widget-title">Services</h3>
+                     <ul class="footer-service-list">
+                        <li><a href="index.html#services-section">Web Design</a></li>
+                        <li><a href="index.html#services-section">Web Development</a></li>
+                        <li><a href="index.html#services-section">Business Strategy</a></li>
+                        <li><a href="index.html#services-section">Data Analysis</a></li>
+                        <li><a href="index.html#services-section">Graphic Design</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="footer-widget">
+                     <h3 class="footer-widget-title">Have a Questions?</h3>
+                     <ul class="footer-contact-list">
+                        <li>
+                           <i class="fa-solid fa-location-dot"></i>
+                           <span>Mandi(HP),India</span>
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-phone"></i>
+                           <a href="tel:+919816748226">+91 9816748226</a>
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-envelope"></i>
+                           <a href="mailto:Kartiksoni48226@gmail.com">Kartiksoni48226@gmail.com</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!-- FOOTER AREA END -->
+
+   <!-- CSS here -->
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/nice-select.min.js"></script>
+   <script src="assets/js/backToTop.js"></script>
+   <script src="assets/js/smooth-scroll.js"></script>
+   <script src="assets/js/appear.min.js"></script>
+   <script src="assets/js/wow.min.js"></script>
+   <script src="assets/js/gsap.min.js"></script>
+   <script src="assets/js/one-page-nav.js"></script>
+   <script src="assets/js/lightcase.js"></script>
+   <script src="assets/js/owl.carousel.min.js"></script>
+   <script src="assets/js/swiper.min.js"></script>
+   <script src="assets/js/imagesloaded-pkgd.js"></script>
+   <script src="assets/js/isotope.pkgd.min.js"></script>
+   <script src="assets/js/odometer.min.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><%= isAuthenticated ? 'Contact Messages' : 'Login' %></title>
+<style>
+body{margin:0;font-family:Segoe UI,sans-serif;background:#120b22;color:#fff}
+<% if (!isAuthenticated) { %>
+.card{width:min(420px,calc(100% - 32px));margin:80px auto;padding:28px;border-radius:18px;background:#1b1134;border:1px solid #6f42ff}
+input,button{width:100%;padding:14px 16px;border-radius:12px;box-sizing:border-box}
+input{margin:12px 0;background:#0d0818;color:#fff;border:1px solid #6f42ff}
+button{border:0;background:linear-gradient(90deg,#6f42ff,#9d6bff);color:#fff;font-weight:700;cursor:pointer}
+.err{color:#ff8585}
+<% } else { %>
+.page{width:min(1240px,calc(100% - 32px));margin:32px auto}
+.header,.toolbar,.cards,.backups,.pager,.actions,.modal-head,.modal-foot{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.panel,.box{background:#1b1134;border:1px solid #6f42ff;border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,.2)}
+.panel{overflow:hidden}.cards{margin:20px 0}.box{padding:18px;flex:1 1 220px}.muted{color:#b8addb}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:12px;text-decoration:none;border:0;cursor:pointer;font-weight:700;color:#fff;background:linear-gradient(90deg,#6f42ff,#9d6bff)}
+.btn.alt{background:#26193f;border:1px solid #6f42ff}.btn.reply{background:linear-gradient(90deg,#2f6bff,#55a2ff)}.btn.view{background:linear-gradient(90deg,#4a36b8,#7f63ff)}.btn.danger{background:linear-gradient(90deg,#8b1e4b,#c13f6a)}.btn.small{min-height:36px;padding:0 12px}
+.toolbar,.status,.pager{padding:18px}.status.ok{color:#8fffb0}.status.err{color:#ff8585}
+input{min-height:42px;padding:0 12px;border-radius:12px;border:1px solid #6f42ff;background:#0d0818;color:#fff}.search{flex:1 1 260px}
+table{width:100%;border-collapse:collapse;min-width:940px}th,td{padding:14px 16px;text-align:left;border-bottom:1px solid rgba(111,66,255,.2)}th{background:#2f1d59;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.table-wrap{overflow:auto}
+.chart{margin:20px 0;padding:18px}.row{display:grid;grid-template-columns:minmax(140px,220px) 1fr auto;gap:12px;align-items:center;margin-top:12px}.track{height:12px;border-radius:999px;background:#2a1947;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,#6f42ff,#a780ff)}
+.preview{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:320px}.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.7);padding:24px}.modal:target{display:flex}.modal-card{width:min(720px,100%);max-height:85vh;overflow:auto;background:#1b1134;border:1px solid #6f42ff;border-radius:18px}.modal-head,.modal-foot,.modal-body{padding:20px}.modal-head,.modal-foot{border-bottom:1px solid rgba(111,66,255,.2)}.modal-foot{border-top:1px solid rgba(111,66,255,.2);border-bottom:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b8addb;margin:0 0 6px}.msg{white-space:pre-wrap}
+@media (max-width:720px){.grid,.row{grid-template-columns:1fr}}
+<% } %>
+</style>
+</head>
+<body>
+
+<% if (!isAuthenticated) { %>
+  <main class="card">
+    <h1>Admin Login</h1>
+    <p>Enter the password to view stored messages.</p>
+    <% if (loginError) { %><p class="err"><%= loginError %></p><% } %>
+    <form method="post" action="<%= pageUrl %>">
+      <input type="password" name="admin_password" placeholder="Password" required>
+      <button type="submit">View Messages</button>
+    </form>
+  </main>
+<% } else { %>
+  <main class="page">
+    <div class="header">
+        <div><h1>Contact Messages</h1><p class="muted">Stored submissions from the "Let's work together" form.</p></div>
+        <a class="btn alt" href="<%= pageUrl %>?logout=1">Log Out</a>
+    </div>
+
+    <section class="cards">
+        <div class="box"><div class="muted">Total Messages</div><h2><%= stats.all %></h2></div>
+        <div class="box"><div class="muted">Messages Today</div><h2><%= stats.today %></h2></div>
+        <div class="box"><div class="muted">Top Service</div><h2><%= stats.top_service %></h2></div>
+    </section>
+
+    <section class="box chart">
+        <div class="header"><div><h2>Service Breakdown</h2><p class="muted">Counts across all stored messages.</p></div></div>
+        <% if (!serviceStats || serviceStats.length === 0) { %>
+            <p class="muted">No service data available yet.</p>
+        <% } else { %>
+            <% serviceStats.forEach(function(stat) { %>
+                <div class="row">
+                    <div><%= stat.label %></div>
+                    <div class="track"><div class="bar" style="width: <%= stat.percent %>%;"></div></div>
+                    <div class="muted"><%= stat.count %></div>
+                </div>
+            <% }); %>
+        <% } %>
+    </section>
+
+    <section class="box backups">
+        <div><h2>Backup And Export</h2><p class="muted">Download the current message data.</p></div>
+        <div class="actions">
+            <a class="btn" href="<%= pageUrl %>?export=csv">CSV Export</a>
+            <a class="btn alt" href="<%= pageUrl %>?export=json">JSON Backup</a>
+            <a class="btn alt" href="<%= pageUrl %>?export=sql">SQL Backup</a>
+        </div>
+    </section>
+
+    <section class="panel" style="margin-top:20px">
+        <div class="toolbar">
+            <form class="toolbar" method="get" action="<%= pageUrl %>" style="padding:0;flex:1;justify-content:flex-start">
+                <input class="search" type="search" name="q" value="<%= q %>" placeholder="Search by name, email, service, or message">
+                <input type="date" name="from" value="<%= from %>">
+                <input type="date" name="to" value="<%= to %>">
+                <button class="btn" type="submit">Search</button>
+                <% if (q || from || to) { %><a class="btn alt" href="<%= pageUrl %>">Clear</a><% } %>
+            </form>
+        </div>
+        <% if (statusMsg) { %><div class="status ok"><%= statusMsg %></div><% } %>
+        <% if (error) { %><div class="status err"><%= error %></div><% } else { %>
+            <div class="status"><%= totalCount %> message<%= totalCount === 1 ? '' : 's' %> found.</div>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Service</th><th>Message</th><th>Received</th><th>Actions</th></tr></thead>
+                    <tbody>
+                    <% messages.forEach(function(message) { %>
+                        <tr>
+                            <td><%= message.id %></td>
+                            <td><%= (message.first_name + ' ' + (message.last_name || '')).trim() %></td>
+                            <td><%= message.email %></td>
+                            <td class="muted"><%= message.phone || '' %></td>
+                            <td class="muted"><%= getServiceLabel(message.service) %></td>
+                            <td><div class="preview"><%= message.message || '' %></div></td>
+                            <td class="muted"><%= message.created_at %></td>
+                            <td>
+                                <div class="actions">
+                                    <a class="btn view small" href="#m<%= message.id %>">View</a>
+                                    <a class="btn reply small" href="mailto:<%= encodeURIComponent(message.email) %>?subject=Re:%20Your%20contact%20form%20message">Reply</a>
+                                    <form method="post" action="<%= pageUrl %>" onsubmit="return confirm('Delete this message?');" style="margin:0">
+                                        <input type="hidden" name="delete_message_id" value="<%= message.id %>">
+                                        <input type="hidden" name="q" value="<%= q %>">
+                                        <input type="hidden" name="from" value="<%= from %>">
+                                        <input type="hidden" name="to" value="<%= to %>">
+                                        <input type="hidden" name="page" value="<%= currentPage %>">
+                                        <button class="btn danger small" type="submit">Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <% if (totalPages > 1) { %>
+                <div class="pager">
+                    <div class="muted">Page <%= currentPage %> of <%= totalPages %></div>
+                    <div class="actions">
+                        <% if (currentPage > 1) { %>
+                          <a class="btn alt" href="<%= pageUrl %>?q=<%= encodeURIComponent(q) %>&from=<%= encodeURIComponent(from) %>&to=<%= encodeURIComponent(to) %>&page=<%= currentPage - 1 %>">Previous</a>
+                        <% } %>
+                        <% if (currentPage < totalPages) { %>
+                          <a class="btn alt" href="<%= pageUrl %>?q=<%= encodeURIComponent(q) %>&from=<%= encodeURIComponent(from) %>&to=<%= encodeURIComponent(to) %>&page=<%= currentPage + 1 %>">Next</a>
+                        <% } %>
+                    </div>
+                </div>
+            <% } %>
+        <% } %>
+    </section>
+  </main>
+
+  <% messages.forEach(function(message) { %>
+      <div class="modal" id="m<%= message.id %>">
+          <div class="modal-card">
+              <div class="modal-head">
+                  <h2>Message #<%= message.id %></h2>
+                  <a class="btn alt small" href="#">x</a>
+              </div>
+              <div class="modal-body">
+                  <div class="grid">
+                      <div><p class="label">Name</p><p><%= (message.first_name + ' ' + (message.last_name || '')).trim() %></p></div>
+                      <div><p class="label">Email</p><p><%= message.email %></p></div>
+                      <div><p class="label">Phone</p><p><%= message.phone || '' %></p></div>
+                      <div><p class="label">Service</p><p><%= getServiceLabel(message.service) %></p></div>
+                      <div><p class="label">Received</p><p><%= message.created_at %></p></div>
+                  </div>
+                  <div style="margin-top:20px"><p class="label">Message</p><p class="msg"><%= message.message || '' %></p></div>
+              </div>
+              <div class="modal-foot">
+                  <a class="btn reply" href="mailto:<%= encodeURIComponent(message.email) %>?subject=Re:%20Your%20contact%20form%20message">Reply</a>
+                  <a class="btn alt" href="#">Close</a>
+              </div>
+          </div>
+      </div>
+  <% }); %>
+<% } %>
+</body>
+</html>

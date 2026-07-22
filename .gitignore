@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+.pnpm-store/
+
+# Next.js build output
+.next/
+out/
+build/
+
+# Environment files
+.env
+.env*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= blog ? 'Edit Blog' : 'Create Blog' %> - Admin CMS</title>
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/font-awesome-pro.min.css">
+  <style>
+    body { background: #0b0512; color: #fff; }
+    .sidebar { min-height: 100vh; background: #130a21; border-right: 1px solid rgba(168, 85, 247, 0.2); }
+    .nav-link { color: #a0aec0; padding: 12px 20px; font-weight: 500; }
+    .nav-link.active, .nav-link:hover { color: #c084fc; background: rgba(168, 85, 247, 0.1); border-radius: 8px; }
+    .card-stat { background: #190e2b; border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 16px; }
+    .text-purple { color: #c084fc; }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3 col-lg-2 sidebar p-3">
+      <h4 class="text-purple fw-bold mb-4">Kartik CMS</h4>
+      <ul class="nav flex-column gap-2">
+        <li class="nav-item"><a href="/admin/dashboard" class="nav-link"><i class="fa-solid fa-chart-line me-2"></i> Dashboard</a></li>
+        <li class="nav-item"><a href="/admin/blogs" class="nav-link active"><i class="fa-solid fa-newspaper me-2"></i> Blogs</a></li>
+        <li class="nav-item"><a href="/admin/messages" class="nav-link"><i class="fa-solid fa-envelope me-2"></i> Inquiries</a></li>
+        <li class="nav-item"><a href="/admin/settings" class="nav-link"><i class="fa-solid fa-gears me-2"></i> Settings</a></li>
+        <li class="nav-item mt-4"><a href="/admin/logout" class="nav-link text-danger"><i class="fa-solid fa-right-from-bracket me-2"></i> Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9 col-lg-10 p-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2><%= blog ? 'Edit Article' : 'Create New Article' %></h2>
+        <a href="/admin/blogs" class="btn btn-outline-secondary"><i class="fa-solid fa-arrow-left me-1"></i> Back to Blogs</a>
+      </div>
+
+      <div class="card-stat p-4">
+        <form id="blog-editor-form" enctype="multipart/form-data">
+          <input type="hidden" name="id" value="<%= blog ? blog._id : '' %>">
+          
+          <div class="row">
+            <div class="col-md-8 mb-3">
+              <label class="form-label text-purple fw-bold">Title</label>
+              <input type="text" name="title" class="form-control bg-dark text-white border-purple" required value="<%= blog ? blog.title : '' %>" placeholder="Enter article title">
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label text-purple fw-bold">Category</label>
+              <input type="text" name="category" class="form-control bg-dark text-white border-purple" required value="<%= blog ? blog.category : 'Tutorial' %>" placeholder="Tutorial, Tips, Freebies...">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label text-purple fw-bold">Tags (comma separated)</label>
+              <input type="text" name="tags" class="form-control bg-dark text-white border-purple" value="<%= blog && blog.tags ? blog.tags.join(', ') : 'Node.js, Web Development' %>">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label text-purple fw-bold">Featured Image File</label>
+              <input type="file" name="featuredImage" class="form-control bg-dark text-white border-purple">
+              <% if (blog && blog.featuredImage) { %>
+                <small class="text-white-50">Current Image: <%= blog.featuredImage %></small>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label text-purple fw-bold">Excerpt Summary</label>
+            <textarea name="excerpt" class="form-control bg-dark text-white border-purple" rows="2" required placeholder="Short summary of the article..."><%= blog ? blog.excerpt : '' %></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label text-purple fw-bold">HTML Body Content</label>
+            <textarea name="content" class="form-control bg-dark text-white border-purple" rows="10" required placeholder="Full HTML / Text article body content..."><%= blog ? blog.content : '' %></textarea>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label text-purple fw-bold">Meta Title (SEO)</label>
+              <input type="text" name="metaTitle" class="form-control bg-dark text-white border-purple" value="<%= blog ? blog.metaTitle : '' %>">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label text-purple fw-bold">Meta Description (SEO)</label>
+              <input type="text" name="metaDescription" class="form-control bg-dark text-white border-purple" value="<%= blog ? blog.metaDescription : '' %>">
+            </div>
+          </div>
+
+          <div class="row align-items-center mb-4">
+            <div class="col-md-4">
+              <label class="form-label text-purple fw-bold">Status</label>
+              <select name="status" class="form-select bg-dark text-white border-purple">
+                <option value="Published" <%= blog && blog.status === 'Published' ? 'selected' : '' %>>Published</option>
+                <option value="Draft" <%= blog && blog.status === 'Draft' ? 'selected' : '' %>>Draft</option>
+              </select>
+            </div>
+            <div class="col-md-4 mt-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="isFeatured" id="isFeatured" value="true" <%= blog && blog.isFeatured ? 'checked' : '' %>>
+                <label class="form-check-label text-white" for="isFeatured">Featured Article</label>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-purple px-4 py-2" id="save-blog-btn"><%= blog ? 'Update Blog' : 'Publish Blog' %></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('blog-editor-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const saveBtn = document.getElementById('save-blog-btn');
+    saveBtn.disabled = true;
+    saveBtn.innerText = 'Saving...';
+
+    const formData = new FormData(this);
+    const blogId = formData.get('id');
+
+    const url = blogId ? `/api/blogs/${blogId}` : '/api/blogs';
+    const method = blogId ? 'PUT' : 'POST';
+
+    try {
+      const res = await fetch(url, {
+        method: method,
+        body: formData
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        window.location.href = '/admin/blogs';
+      } else {
+        alert(data.message || 'Error saving blog post');
+      }
+    } catch (err) {
+      alert('Error submitting form');
+    } finally {
+      saveBtn.disabled = false;
+      saveBtn.innerText = blogId ? 'Update Blog' : 'Publish Blog';
+    }
+  });
+</script>
+
+</body>
+</html>

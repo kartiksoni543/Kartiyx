@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Kartik Soni CMS</title>
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/font-awesome-pro.min.css">
+  <style>
+    body { background: #0b0512; color: #fff; }
+    .sidebar { min-height: 100vh; background: #130a21; border-right: 1px solid rgba(168, 85, 247, 0.2); }
+    .nav-link { color: #a0aec0; padding: 12px 20px; font-weight: 500; }
+    .nav-link.active, .nav-link:hover { color: #c084fc; background: rgba(168, 85, 247, 0.1); border-radius: 8px; }
+    .card-stat { background: #190e2b; border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 16px; }
+    .text-purple { color: #c084fc; }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3 col-lg-2 sidebar p-3">
+      <h4 class="text-purple fw-bold mb-4">Kartik CMS</h4>
+      <ul class="nav flex-column gap-2">
+        <li class="nav-item"><a href="/admin/dashboard" class="nav-link active"><i class="fa-solid fa-chart-line me-2"></i> Dashboard</a></li>
+        <li class="nav-item"><a href="/admin/blogs" class="nav-link"><i class="fa-solid fa-newspaper me-2"></i> Blogs</a></li>
+        <li class="nav-item"><a href="/admin/messages" class="nav-link"><i class="fa-solid fa-envelope me-2"></i> Inquiries</a></li>
+        <li class="nav-item"><a href="/admin/settings" class="nav-link"><i class="fa-solid fa-gears me-2"></i> Settings</a></li>
+        <li class="nav-item mt-4"><a href="/admin/logout" class="nav-link text-danger"><i class="fa-solid fa-right-from-bracket me-2"></i> Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9 col-lg-10 p-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Welcome back, <span class="text-purple"><%= user %></span></h2>
+        <a href="/" target="_blank" class="btn btn-outline-info"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> View Live Site</a>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="row g-4 mb-4">
+        <div class="col-md-3">
+          <div class="card-stat p-3">
+            <h6 class="text-white-50">Total Blogs</h6>
+            <h3 class="text-purple fw-bold mb-0"><%= stats.totalBlogs %></h3>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card-stat p-3">
+            <h6 class="text-white-50">Published Blogs</h6>
+            <h3 class="text-purple fw-bold mb-0"><%= stats.publishedBlogs %></h3>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card-stat p-3">
+            <h6 class="text-white-50">Total Inquiries</h6>
+            <h3 class="text-purple fw-bold mb-0"><%= stats.totalMessages %></h3>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card-stat p-3">
+            <h6 class="text-white-50">Unread Messages</h6>
+            <h3 class="text-warning fw-bold mb-0"><%= stats.unreadMessages %></h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="card-stat p-4 mb-4">
+        <h5 class="text-purple mb-3">Quick Actions</h5>
+        <div class="d-flex gap-3">
+          <a href="/admin/blogs/create" class="btn btn-primary bg-purple"><i class="fa-solid fa-plus me-1"></i> Create New Blog Article</a>
+          <a href="/admin/messages" class="btn btn-outline-light"><i class="fa-solid fa-envelope me-1"></i> View Client Messages</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

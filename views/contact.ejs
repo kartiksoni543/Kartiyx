@@ -1,0 +1,93 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main class="site-content">
+   <section class="page-header py-5 text-center text-white" style="background: linear-gradient(180deg, #0f0715 0%, #140c1c 100%); padding-top: 140px !important;">
+      <div class="container">
+         <h1 class="display-4 text-purple">Get In Touch</h1>
+         <p class="lead">Have a project in mind or want to collaborate? Send a message below.</p>
+      </div>
+   </section>
+
+   <section class="contact-section py-5 text-white" id="contact-section">
+      <div class="container">
+         <div class="row justify-content-center">
+            <div class="col-lg-8">
+               <div class="contact-form-box p-4 rounded-4 bg-dark border border-purple">
+                  <form id="page-contact-form">
+                     <div class="mb-3">
+                        <label class="form-label text-purple">Your Name</label>
+                        <input type="text" name="name" class="form-control bg-dark text-white border-purple" required placeholder="John Doe">
+                     </div>
+                     <div class="mb-3">
+                        <label class="form-label text-purple">Email Address</label>
+                        <input type="email" name="email" class="form-control bg-dark text-white border-purple" required placeholder="john@example.com">
+                     </div>
+                     <div class="mb-3">
+                        <label class="form-label text-purple">Subject</label>
+                        <input type="text" name="subject" class="form-control bg-dark text-white border-purple" required placeholder="Web Development Project Inquiry">
+                     </div>
+                     <div class="mb-3">
+                        <label class="form-label text-purple">Message</label>
+                        <textarea name="message" class="form-control bg-dark text-white border-purple" rows="5" required placeholder="Tell me about your project goals and timeline..."></textarea>
+                     </div>
+                     <button type="submit" class="btn btn-purple w-100 py-3 font-bold" id="page-contact-btn">Send Message</button>
+                     <div class="form-success-message mt-3" id="page-contact-alert" style="display: none;"></div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+</main>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('page-contact-form');
+      const alertBox = document.getElementById('page-contact-alert');
+      const submitBtn = document.getElementById('page-contact-btn');
+
+      if (form) {
+         form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            alertBox.style.display = 'none';
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Sending...';
+
+            try {
+               const res = await fetch('/api/contact', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                     name: form.name.value,
+                     email: form.email.value,
+                     subject: form.subject.value,
+                     message: form.message.value
+                  })
+               });
+
+               const data = await res.json();
+               alertBox.style.display = 'block';
+
+               if (res.ok && data.success) {
+                  alertBox.className = 'form-success-message text-success p-3 rounded bg-dark border border-success mt-3';
+                  alertBox.innerText = data.message;
+                  form.reset();
+               } else {
+                  alertBox.className = 'form-success-message text-danger p-3 rounded bg-dark border border-danger mt-3';
+                  alertBox.innerText = data.message || 'Error sending message.';
+               }
+            } catch (err) {
+               alertBox.style.display = 'block';
+               alertBox.className = 'form-success-message text-danger p-3 rounded bg-dark border border-danger mt-3';
+               alertBox.innerText = 'Network error. Please try again.';
+            } finally {
+               submitBtn.disabled = false;
+               submitBtn.innerText = 'Send Message';
+            }
+         });
+      }
+   });
+</script>
+
+<%- include('partials/footer') %>

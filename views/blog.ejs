@@ -1,0 +1,81 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main class="site-content">
+   <section class="page-header py-5 text-center text-white" style="background: linear-gradient(180deg, #0f0715 0%, #140c1c 100%); padding-top: 140px !important;">
+      <div class="container">
+         <h1 class="display-4 text-purple">Blog & Insights</h1>
+         <p class="lead">Latest tutorials, UI/UX guides, and software architecture articles.</p>
+      </div>
+   </section>
+
+   <section class="py-5 text-white">
+      <div class="container">
+         <!-- Search & Category Filters -->
+         <div class="row mb-5 align-items-center">
+            <div class="col-md-6 mb-3 mb-md-0">
+               <form action="/blog" method="GET" class="d-flex">
+                  <input type="text" name="search" class="form-control bg-dark text-white border-purple me-2" placeholder="Search articles..." value="<%= searchQuery %>">
+                  <button type="submit" class="btn btn-purple"><i class="fa-solid fa-magnifying-glass"></i></button>
+               </form>
+            </div>
+            <div class="col-md-6 text-md-end">
+               <div class="btn-group flex-wrap">
+                  <a href="/blog" class="btn btn-outline-purple <%= !currentCategory ? 'active' : '' %>">All</a>
+                  <% if (categories && categories.length > 0) { %>
+                     <% categories.forEach(cat => { %>
+                        <a href="/blog?category=<%= encodeURIComponent(cat) %>" class="btn btn-outline-purple <%= currentCategory === cat ? 'active' : '' %>"><%= cat %></a>
+                     <% }) %>
+                  <% } %>
+               </div>
+            </div>
+         </div>
+
+         <!-- Blogs Grid -->
+         <div class="row">
+            <% if (blogs && blogs.length > 0) { %>
+               <% blogs.forEach(blog => { %>
+                  <div class="col-lg-4 col-md-6 mb-4">
+                     <div class="card bg-dark border-purple text-white h-100 shadow rounded-4 overflow-hidden">
+                        <img src="<%= blog.featuredImage %>" class="card-img-top" alt="<%= blog.title %>" style="height: 220px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                           <div class="d-flex justify-content-between text-white-50 small mb-2">
+                              <span><i class="fa-regular fa-calendar-days text-purple"></i> <%= new Date(blog.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) %></span>
+                              <span><i class="fa-regular fa-clock text-purple"></i> <%= blog.readingTime %></span>
+                           </div>
+                           <h5 class="card-title text-purple"><%= blog.title %></h5>
+                           <p class="card-text text-white-50 flex-grow-1"><%= blog.excerpt %></p>
+                           <a href="/blog/<%= blog.slug %>" class="btn btn-outline-purple mt-3">Read Article <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                     </div>
+                  </div>
+               <% }) %>
+            <% } else { %>
+               <div class="col-12 text-center py-5">
+                  <h4 class="text-white-50">No articles found matching your criteria.</h4>
+                  <a href="/blog" class="btn btn-purple mt-3">Reset Search</a>
+               </div>
+            <% } %>
+         </div>
+
+         <!-- Pagination -->
+         <% if (totalPages > 1) { %>
+            <div class="row mt-4">
+               <div class="col-12 d-flex justify-content-center">
+                  <nav>
+                     <ul class="pagination">
+                        <% for (let i = 1; i <= totalPages; i++) { %>
+                           <li class="page-item <%= currentPage === i ? 'active' : '' %>">
+                              <a class="page-link bg-dark text-white border-purple" href="/blog?page=<%= i %><%= currentCategory ? '&category=' + encodeURIComponent(currentCategory) : '' %><%= searchQuery ? '&search=' + encodeURIComponent(searchQuery) : '' %>"><%= i %></a>
+                           </li>
+                        <% } %>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+         <% } %>
+      </div>
+   </section>
+</main>
+
+<%- include('partials/footer') %>
